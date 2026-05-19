@@ -10,13 +10,12 @@
     body { font-family: 'Inter', system-ui, sans-serif; }
     .code { font-family: 'Courier New', monospace; }
     .accent { color: #10b981; }
-    .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%); }
   </style>
 </head>
-<body class="bg-zinc-950 text-zinc-200">
+<body class="bg-zinc-950 text-zinc-200 leading-relaxed">
 
   <!-- Navbar -->
-  <nav class="bg-black/90 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-800">
+  <nav class="bg-black/80 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-800">
     <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
       <h1 class="text-2xl font-bold accent code">NISHAN.SHRESTHA</h1>
       <div class="space-x-8 hidden md:flex">
@@ -29,73 +28,131 @@
     </div>
   </nav>
 
-  <!-- Hero with Photo -->
-  <section class="hero-bg min-h-screen flex items-center">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <p class="accent text-lg code">// ICT Business Analyst</p>
-        <h1 class="text-5xl md:text-7xl font-bold leading-tight mt-4">Nishan Shrestha<span class="accent">.</span></h1>
-        <p class="text-2xl mt-6 text-zinc-400">Glenfield, NSW • Sydney</p>
-        
-        <p class="mt-8 text-lg max-w-lg">
-          Honors student with strong background in Business Analysis, Cloud Infrastructure, 
-          Process Automation and IT Operations.
-        </p>
+  <!-- Hero -->
+  <section class="min-h-screen flex items-center border-b border-zinc-800">
+    <div class="max-w-5xl mx-auto px-6 pt-20">
+      <p class="accent text-lg code">// ICT Business Analyst</p>
+      <h1 class="text-6xl md:text-7xl font-bold leading-tight mt-4">
+        Nishan Shrestha<span class="accent">.</span>
+      </h1>
+      <p class="text-2xl mt-6 text-zinc-400">Glenfield, NSW • Sydney</p>
 
-        <div class="mt-12 flex flex-wrap gap-4">
-          <a href="#contact" class="bg-emerald-500 hover:bg-emerald-600 px-8 py-4 rounded-2xl font-semibold flex items-center gap-2">
-            Let's Connect <i class="fas fa-arrow-right"></i>
-          </a>
-          <a href="resume.pdf" target="_blank" class="border border-zinc-700 hover:border-emerald-400 px-8 py-4 rounded-2xl font-semibold flex items-center gap-2">
-            <i class="fas fa-download"></i> Download Resume
-          </a>
-        </div>
+      <div class="mt-10 max-w-2xl text-lg">
+        Honors student and versatile professional with strong background in Business Analysis, 
+        Cloud Infrastructure, Process Automation, and IT Operations.
       </div>
 
-      <!-- Your Photo -->
-      <div class="flex justify-center md:justify-end">
-        <img src="profile.jpg" alt="Nishan Shrestha" 
-             class="w-80 h-80 object-cover rounded-3xl border-4 border-emerald-500 shadow-2xl">
+      <div class="mt-12 flex flex-wrap gap-5">
+        <a href="#contact" class="bg-emerald-500 hover:bg-emerald-600 px-8 py-4 rounded-xl font-semibold flex items-center gap-2">
+          Let's Connect <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="resume.pdf" target="_blank" 
+           class="border border-zinc-700 hover:border-emerald-400 px-8 py-4 rounded-xl font-semibold flex items-center gap-2">
+          <i class="fas fa-download"></i> Download Resume
+        </a>
+        <a href="https://www.linkedin.com/in/nishanshresthanewa/" target="_blank" 
+           class="border border-zinc-700 hover:border-emerald-400 px-8 py-4 rounded-xl font-semibold flex items-center gap-2">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+
+      <div class="mt-20 code text-sm text-zinc-500">
+        shresnissan@outlook.com • +61 452 179 460
       </div>
     </div>
   </section>
 
   <!-- About -->
   <section id="about" class="py-24 border-b border-zinc-800">
-    <div class="max-w-6xl mx-auto px-6">
-      <p class="code accent mb-4">// About Me</p>
-      <h2 class="text-4xl font-bold mb-6">Business Analyst & Tech Professional</h2>
-      <p class="text-zinc-300 text-lg max-w-3xl">
-        Versatile professional with experience in IT Business Analysis, Cloud Technologies, 
-        Aged Care Administration and Retail Operations. Passionate about process improvement and automation.
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="code accent mb-4">// Who I am</p>
+      <h2 class="text-4xl font-bold">Business Analyst &amp; Tech Professional</h2>
+      <p class="mt-8 text-zinc-300 text-lg max-w-3xl">
+        Versatile professional with hands-on experience in IT Business Analysis, Cloud Infrastructure, 
+        Aged Care Operations, Retail IT Management and Team Supervision.
       </p>
     </div>
   </section>
 
-  <!-- Experience + Projects + Skills + Contact -->
-  <!-- (I kept it clean and professional) -->
-
+  <!-- Experience -->
   <section id="experience" class="py-24 bg-zinc-900">
-    <div class="max-w-6xl mx-auto px-6">
-      <p class="code accent mb-6">// Experience</p>
-      <h2 class="text-4xl font-bold mb-12">Work Experience</h2>
-      <div class="space-y-12 text-zinc-300">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="code accent mb-6">// Work Experience</p>
+      <h2 class="text-4xl font-bold mb-12">Experience</h2>
+
+      <div class="space-y-16">
         <div>
           <p class="accent">Jun – Sep 2025</p>
-          <h3 class="font-semibold">ICT Business Analyst Intern @ Hubify Limited (ASX: HFY)</h3>
-          <ul class="list-disc pl-6 mt-3 space-y-1">
+          <h3 class="font-semibold text-xl">ICT Business Analyst (Internship)</h3>
+          <p class="text-zinc-400">Hubify Limited (ASX: HFY)</p>
+          <ul class="mt-4 list-disc pl-5 space-y-2 text-zinc-300">
             <li>Requirements gathering and documentation</li>
-            <li>Led ticket analysis and automation project</li>
-            <li>Created test plans and user training materials</li>
+            <li>Led ticket analysis project and automation opportunities</li>
+            <li>Developed test plans, user manuals and training materials</li>
+            <li>Designed and deployed automation workflows</li>
           </ul>
         </div>
-        <!-- Add more experience as needed -->
+
+        <div>
+          <p class="accent">May 2024 – Present</p>
+          <h3 class="font-semibold text-xl">Customer Service Consultant & Wellbeing Carer</h3>
+          <p class="text-zinc-400">Bupa Aged Care, Sutherland NSW</p>
+          <ul class="mt-4 list-disc pl-5 space-y-2 text-zinc-300">
+            <li>Manage admissions, recruitment & onboarding</li>
+            <li>Administrative operations using Epicor, Resident Select & Dimensions</li>
+            <li>Deliver personalised wellbeing activities</li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="accent">Dec 2021 – Sep 2024</p>
+          <h3 class="font-semibold text-xl">Administrator & Team Supervisor</h3>
+          <p class="text-zinc-400">Maloney's Grocer, Rozelle NSW</p>
+          <ul class="mt-4 list-disc pl-5 space-y-2 text-zinc-300">
+            <li>Managed IT infrastructure and technical support</li>
+            <li>Employee rostering and sales reporting</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="bg-black py-10 text-center text-zinc-500 code">
-    © 2026 Nishan Shrestha • Built with ❤️
+  <!-- Projects -->
+  <section id="projects" class="py-24">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="code accent mb-6">// Projects</p>
+      <h2 class="text-4xl font-bold mb-12">Featured Projects</h2>
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="bg-zinc-900 p-8 rounded-2xl border border-zinc-800 hover:border-emerald-400 transition">
+          <h3 class="font-semibold text-xl">Cloud Infrastructure Using AWS EC2</h3>
+          <p class="accent mt-2">High Distinction</p>
+          <p class="mt-4 text-zinc-400">Designed, deployed and monitored a secure web server on AWS EC2 with CloudWatch and security groups.</p>
+        </div>
+
+        <div class="bg-zinc-900 p-8 rounded-2xl border border-zinc-800 hover:border-emerald-400 transition">
+          <h3 class="font-semibold text-xl">Financial Analysis – CSL Limited (ASX)</h3>
+          <p class="accent mt-2">Trend & Ratio Analysis</p>
+          <p class="mt-4 text-zinc-400">Comprehensive financial performance analysis (2019–2022) including ROE and EBITDA evaluation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24 border-t border-zinc-800">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <p class="code accent mb-4">// Let's connect</p>
+      <h2 class="text-4xl font-bold mb-8">Ready to build something great together?</h2>
+      <div class="flex justify-center gap-10 text-5xl mb-10">
+        <a href="mailto:shresnissan@outlook.com" class="hover:accent"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/nishanshresthanewa/" target="_blank" class="hover:accent"><i class="fab fa-linkedin"></i></a>
+        <a href="tel:+61452179460" class="hover:accent"><i class="fas fa-phone"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-black py-10 text-center text-zinc-500 text-sm code">
+    © 2026 Nishan Shrestha • Built with ❤️ and Tailwind
   </footer>
 
 </body>
