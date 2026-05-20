@@ -36,6 +36,7 @@ if (themeBtn) {
   });
 }
 
+// Experience accordion toggle
 document.querySelectorAll('.exp-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const target = document.getElementById(btn.dataset.target);
@@ -44,21 +45,25 @@ document.querySelectorAll('.exp-btn').forEach(btn => {
   });
 });
 
-const modal = document.getElementById('projectModal');
+// ── Project modal ────────────────────────────────────────────────────────────
+const modal        = document.getElementById('projectModal');
 const modalBackdrop = document.getElementById('modalBackdrop');
-const modalClose = document.getElementById('modalClose');
-const modalImg = document.getElementById('modalImg');
-const modalTitle = document.getElementById('modalTitle');
-const modalText = document.getElementById('modalText');
-const modalLink = document.getElementById('modalLink');
+const modalClose   = document.getElementById('modalClose');
+const modalImg     = document.getElementById('modalImg');
+const modalTitle   = document.getElementById('modalTitle');
+const modalText    = document.getElementById('modalText');
+const modalLink    = document.getElementById('modalLink');
 
 document.querySelectorAll('.project-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    modalImg.src = btn.dataset.img;
-    modalImg.alt = btn.dataset.title;
+    modalImg.src       = btn.dataset.img;
+    modalImg.alt       = btn.dataset.title;
+    modalImg.style.display = 'block';
     modalTitle.textContent = btn.dataset.title;
-    modalText.textContent = btn.dataset.text;
-    modalLink.href = btn.dataset.link;
+    modalText.textContent  = btn.dataset.text;
+    modalLink.href         = btn.dataset.link;
+    modalLink.textContent  = 'Open PDF';
+    modalLink.style.display = 'inline-flex';
     modal.classList.remove('hidden');
   });
 });
@@ -68,24 +73,17 @@ function closeModal() {
 }
 
 if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
-if (modalClose) modalClose.addEventListener('click', closeModal);
+if (modalClose)    modalClose.addEventListener('click', closeModal);
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeModal();
-});
-// Cert cards — reuse the same modal
+// ── Certification accordion toggle ───────────────────────────────────────────
 document.querySelectorAll('.cert-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    const img = btn.dataset.img;
-    modalImg.src = img || '';
-    modalImg.style.display = img ? 'block' : 'none';
-    modalImg.alt = btn.dataset.title;
-    modalTitle.textContent = btn.dataset.title;
-    modalText.textContent = btn.dataset.text;
-    const link = btn.dataset.link;
-    modalLink.href = link || '#';
-    modalLink.textContent = link ? 'Open Link' : '';
-    modalLink.style.display = link ? 'inline-flex' : 'none';
-    modal.classList.remove('hidden');
+    const target = document.getElementById(btn.dataset.target);
+    const icon   = btn.querySelector('.cert-chevron');
+
+    target.classList.toggle('hidden');
+    target.classList.toggle('show');
+    if (icon) icon.classList.toggle('rotate-180');
   });
 });
