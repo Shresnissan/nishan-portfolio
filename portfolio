@@ -2,9 +2,12 @@ portfolio/
 ├── index.html
 ├── styles.css
 ├── script.js
-├── assets/
-│   ├── profile.jpg
-│   ├── project-aws.jpg
-│   ├── project-finance.jpg
-│   ├── project-web.jpg
-│   └── resume.pdf
+└── assets/
+    ├── profile.jpg
+    ├── project-aws.jpg
+    ├── project-aws.pdf
+    ├── project-finance.jpg
+    ├── project-finance.pdf
+    ├── project-web.jpg
+    ├── project-web.pdf
+    └── resume.pdf
