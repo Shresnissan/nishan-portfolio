@@ -113,14 +113,81 @@ body {
   object-fit: cover;
 }
 
+/* ── Certification cards ───────────────────────────────────────── */
 .cert-card {
-  padding: 1rem 1.25rem;
   border-radius: 1rem;
   background: rgba(255,255,255,.05);
   border: 1px solid rgba(255,255,255,.08);
   color: #e2e8f0;
+  overflow: hidden;
 }
 
+.cert-btn {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.cert-btn:hover {
+  background: rgba(52, 211, 153, 0.06);
+  border-color: rgba(52, 211, 153, 0.3);
+  color: #34d399;
+}
+
+.cert-chevron {
+  flex-shrink: 0;
+  color: #34d399;
+  transition: transform 0.3s ease;
+}
+
+.cert-content {
+  padding: 0 1.25rem 1rem 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.cert-content.show {
+  animation: expandDown 0.3s ease;
+}
+
+.cert-view-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  background: #10b981;
+  color: #020617;
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cert-view-link:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+.cert-no-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  background: rgba(255,255,255,0.06);
+  color: #94a3b8;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ── Reveal animations ─────────────────────────────────────────── */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -274,26 +341,14 @@ body {
   transform: translateY(-2px);
 }
 
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal, .fade-up, .floaty {
     animation: none !important;
     transition: none !important;
   }
-  .cert-panel {
-  transition: all 0.35s ease;
-}
-
-.cert-panel.show {
-  animation: expandDown 0.35s ease;
-}
-
-.cert-btn {
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.cert-btn:hover {
-  background: rgba(255,255,255,0.03);
-  transform: translateY(-2px);
-}
 }
