@@ -86,24 +86,4 @@ document.querySelectorAll('.cert-btn').forEach(btn => {
     target.classList.toggle('show');
     if (icon) icon.classList.toggle('rotate-180');
   });
-  
-});// ── ADD THESE LINES TO THE BOTTOM OF script.js ──
-
-document.querySelectorAll('.cert-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const target  = document.getElementById(btn.dataset.target);
-    const chevron = btn.querySelector('.cert-chevron');
-
-    const isOpen = !target.classList.contains('hidden');
-
-    if (isOpen) {
-      target.classList.add('hidden');
-      target.classList.remove('show');
-      chevron.classList.remove('open');
-    } else {
-      target.classList.remove('hidden');
-      target.classList.add('show');
-      chevron.classList.add('open');
-    }
-  });
 });
