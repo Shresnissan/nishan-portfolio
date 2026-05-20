@@ -392,98 +392,131 @@
           </div>
         </div>
 
-        <!-- REPLACE the <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4"> block with this -->
+        <!-- REPLACE the entire <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4"> block with this -->
 
-<div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="space-y-4 mt-8">
 
-  <!-- Cert 1 -->
-  <div class="cert-card reveal">
-    <button class="cert-btn" data-target="cert-1">
-      <span>CHC33021 - Certificate III in Individual Support (Ageing &amp; Disability)</span>
-      <i class="fa-solid fa-chevron-down cert-chevron"></i>
+  <div class="glass rounded-3xl overflow-hidden reveal">
+    <button class="cert-btn w-full text-left p-6 flex items-center justify-between gap-4" data-target="cert-1">
+      <div class="flex items-center gap-4">
+        <div class="cert-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div>
+          <h4 class="font-semibold text-white text-base">Certificate III in Individual Support</h4>
+          <p class="text-emerald-400 text-sm mt-0.5">CHC33021 · Ageing &amp; Disability</p>
+        </div>
+      </div>
+      <i class="fa-solid fa-chevron-down cert-chevron text-emerald-400 text-sm flex-shrink-0"></i>
     </button>
-    <div id="cert-1" class="cert-content hidden">
-      <p class="text-slate-300 text-sm mt-2">Covers person-centred support skills for individuals who need assistance due to ageing or disability, including communication, safety, and personal care.</p>
-      <!-- TO ADD YOUR CERTIFICATE: replace the href below with your file path e.g. assets/cert-chc33021.pdf -->
-      <!-- If you have no file yet, delete the <a> line and keep only the <span> line -->
-      <span class="cert-no-link"><i class="fa-solid fa-lock mr-1"></i>Certificate on file</span>
-      <!-- <a href="assets/cert-chc33021.pdf" target="_blank" class="cert-view-link"><i class="fa-solid fa-file-pdf"></i>View Certificate</a> -->
+    <div id="cert-1" class="cert-content hidden px-6 pb-6">
+      <p class="text-slate-300 text-sm leading-relaxed">Covers person-centred support skills for individuals who need assistance due to ageing or disability, including communication, safety, and personal care practices.</p>
+      <div class="mt-4">
+        <!-- When you have the PDF: delete the line below and uncomment the <a> line -->
+        <span class="cert-no-link"><i class="fa-solid fa-file mr-2"></i>Certificate on file — upload to assets/ to display</span>
+        <!-- <a href="assets/cert-chc33021.pdf" target="_blank" class="cert-view-btn"><i class="fa-solid fa-file-pdf"></i>View Certificate</a> -->
+      </div>
     </div>
   </div>
 
-  <!-- Cert 2 -->
-  <div class="cert-card reveal">
-    <button class="cert-btn" data-target="cert-2">
-      <span>Program of Experience in the Palliative Approach (PEPA)</span>
-      <i class="fa-solid fa-chevron-down cert-chevron"></i>
+  <div class="glass rounded-3xl overflow-hidden reveal">
+    <button class="cert-btn w-full text-left p-6 flex items-center justify-between gap-4" data-target="cert-2">
+      <div class="flex items-center gap-4">
+        <div class="cert-icon"><i class="fa-solid fa-hand-holding-medical"></i></div>
+        <div>
+          <h4 class="font-semibold text-white text-base">Program of Experience in the Palliative Approach</h4>
+          <p class="text-emerald-400 text-sm mt-0.5">PEPA · Palliative Care</p>
+        </div>
+      </div>
+      <i class="fa-solid fa-chevron-down cert-chevron text-emerald-400 text-sm flex-shrink-0"></i>
     </button>
-    <div id="cert-2" class="cert-content hidden">
-      <p class="text-slate-300 text-sm mt-2">National program providing health and aged care workers with the skills and confidence to deliver quality palliative care. Includes structured placement and training.</p>
-      <span class="cert-no-link"><i class="fa-solid fa-lock mr-1"></i>Certificate on file</span>
-      <!-- <a href="assets/cert-pepa.pdf" target="_blank" class="cert-view-link"><i class="fa-solid fa-file-pdf"></i>View Certificate</a> -->
+    <div id="cert-2" class="cert-content hidden px-6 pb-6">
+      <p class="text-slate-300 text-sm leading-relaxed">National program providing health and aged care workers with the skills and confidence to deliver quality palliative care. Includes structured placement and training.</p>
+      <div class="mt-4">
+        <span class="cert-no-link"><i class="fa-solid fa-file mr-2"></i>Certificate on file — upload to assets/ to display</span>
+        <!-- <a href="assets/cert-pepa.pdf" target="_blank" class="cert-view-btn"><i class="fa-solid fa-file-pdf"></i>View Certificate</a> -->
+      </div>
     </div>
   </div>
 
-  <!-- Cert 3 -->
-  <div class="cert-card reveal">
-    <button class="cert-btn" data-target="cert-3">
-      <span>Google IT Support Certificate</span>
-      <i class="fa-solid fa-chevron-down cert-chevron"></i>
+  <div class="glass rounded-3xl overflow-hidden reveal">
+    <button class="cert-btn w-full text-left p-6 flex items-center justify-between gap-4" data-target="cert-3">
+      <div class="flex items-center gap-4">
+        <div class="cert-icon"><i class="fa-brands fa-google"></i></div>
+        <div>
+          <h4 class="font-semibold text-white text-base">Google IT Support Certificate</h4>
+          <p class="text-emerald-400 text-sm mt-0.5">Google · Coursera</p>
+        </div>
+      </div>
+      <i class="fa-solid fa-chevron-down cert-chevron text-emerald-400 text-sm flex-shrink-0"></i>
     </button>
-    <div id="cert-3" class="cert-content hidden">
-      <p class="text-slate-300 text-sm mt-2">Issued by Google via Coursera. Covers troubleshooting, networking, operating systems, system administration, and security fundamentals across 5 courses.</p>
-      <!-- TO ADD YOUR CERTIFICATE: swap the <a> below to point to your downloaded PDF -->
-      <a href="https://www.coursera.org/professional-certificates/google-it-support" target="_blank" class="cert-view-link">
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>View on Coursera
-      </a>
-      <!-- Or once you have the PDF: -->
-      <!-- <a href="assets/cert-google-it.pdf" target="_blank" class="cert-view-link"><i class="fa-solid fa-file-pdf"></i>View Certificate</a> -->
+    <div id="cert-3" class="cert-content hidden px-6 pb-6">
+      <p class="text-slate-300 text-sm leading-relaxed">Covers troubleshooting, networking, operating systems, system administration, and security fundamentals across 5 courses.</p>
+      <div class="mt-4 flex flex-wrap gap-3">
+        <a href="https://www.coursera.org/professional-certificates/google-it-support" target="_blank" class="cert-view-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i>View on Coursera</a>
+        <!-- Also add your PDF once downloaded: -->
+        <!-- <a href="assets/cert-google-it.pdf" target="_blank" class="cert-view-btn"><i class="fa-solid fa-file-pdf"></i>View Certificate</a> -->
+      </div>
     </div>
   </div>
 
-  <!-- Cert 4 -->
-  <div class="cert-card reveal">
-    <button class="cert-btn" data-target="cert-4">
-      <span>Google Data Analytics Certificate</span>
-      <i class="fa-solid fa-chevron-down cert-chevron"></i>
+  <div class="glass rounded-3xl overflow-hidden reveal">
+    <button class="cert-btn w-full text-left p-6 flex items-center justify-between gap-4" data-target="cert-4">
+      <div class="flex items-center gap-4">
+        <div class="cert-icon"><i class="fa-solid fa-chart-bar"></i></div>
+        <div>
+          <h4 class="font-semibold text-white text-base">Google Data Analytics Certificate</h4>
+          <p class="text-emerald-400 text-sm mt-0.5">Google · Coursera</p>
+        </div>
+      </div>
+      <i class="fa-solid fa-chevron-down cert-chevron text-emerald-400 text-sm flex-shrink-0"></i>
     </button>
-    <div id="cert-4" class="cert-content hidden">
-      <p class="text-slate-300 text-sm mt-2">Issued by Google via Coursera. Covers the full data analysis workflow including spreadsheets, SQL, R programming, and Tableau visualisation across 8 courses.</p>
-      <a href="https://www.coursera.org/professional-certificates/google-data-analytics" target="_blank" class="cert-view-link">
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>View on Coursera
-      </a>
-      <!-- <a href="assets/cert-google-data.pdf" target="_blank" class="cert-view-link"><i class="fa-solid fa-file-pdf"></i>View Certificate</a> -->
+    <div id="cert-4" class="cert-content hidden px-6 pb-6">
+      <p class="text-slate-300 text-sm leading-relaxed">Covers the full data analysis workflow including spreadsheets, SQL, R programming, and Tableau visualisation across 8 courses.</p>
+      <div class="mt-4 flex flex-wrap gap-3">
+        <a href="https://www.coursera.org/professional-certificates/google-data-analytics" target="_blank" class="cert-view-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i>View on Coursera</a>
+        <!-- <a href="assets/cert-google-data.pdf" target="_blank" class="cert-view-btn"><i class="fa-solid fa-file-pdf"></i>View Certificate</a> -->
+      </div>
     </div>
   </div>
 
-  <!-- Cert 5 -->
-  <div class="cert-card reveal">
-    <button class="cert-btn" data-target="cert-5">
-      <span>IBM Cybersecurity Analyst Certificate</span>
-      <i class="fa-solid fa-chevron-down cert-chevron"></i>
+  <div class="glass rounded-3xl overflow-hidden reveal">
+    <button class="cert-btn w-full text-left p-6 flex items-center justify-between gap-4" data-target="cert-5">
+      <div class="flex items-center gap-4">
+        <div class="cert-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div>
+          <h4 class="font-semibold text-white text-base">IBM Cybersecurity Analyst Certificate</h4>
+          <p class="text-emerald-400 text-sm mt-0.5">IBM · Coursera</p>
+        </div>
+      </div>
+      <i class="fa-solid fa-chevron-down cert-chevron text-emerald-400 text-sm flex-shrink-0"></i>
     </button>
-    <div id="cert-5" class="cert-content hidden">
-      <p class="text-slate-300 text-sm mt-2">Issued by IBM via Coursera. Covers network security, endpoint protection, incident response, threat intelligence, and penetration testing fundamentals across 8 courses.</p>
-      <a href="https://www.coursera.org/professional-certificates/ibm-cybersecurity-analyst" target="_blank" class="cert-view-link">
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>View on Coursera
-      </a>
-      <!-- <a href="assets/cert-ibm-cyber.pdf" target="_blank" class="cert-view-link"><i class="fa-solid fa-file-pdf"></i>View Certificate</a> -->
+    <div id="cert-5" class="cert-content hidden px-6 pb-6">
+      <p class="text-slate-300 text-sm leading-relaxed">Covers network security, endpoint protection, incident response, threat intelligence, and penetration testing fundamentals across 8 courses.</p>
+      <div class="mt-4 flex flex-wrap gap-3">
+        <a href="https://www.coursera.org/professional-certificates/ibm-cybersecurity-analyst" target="_blank" class="cert-view-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i>View on Coursera</a>
+        <!-- <a href="assets/cert-ibm-cyber.pdf" target="_blank" class="cert-view-btn"><i class="fa-solid fa-file-pdf"></i>View Certificate</a> -->
+      </div>
     </div>
   </div>
 
-  <!-- Cert 6 -->
-  <div class="cert-card reveal">
-    <button class="cert-btn" data-target="cert-6">
-      <span>CPR and First Aid Certified</span>
-      <i class="fa-solid fa-chevron-down cert-chevron"></i>
+  <div class="glass rounded-3xl overflow-hidden reveal">
+    <button class="cert-btn w-full text-left p-6 flex items-center justify-between gap-4" data-target="cert-6">
+      <div class="flex items-center gap-4">
+        <div class="cert-icon"><i class="fa-solid fa-kit-medical"></i></div>
+        <div>
+          <h4 class="font-semibold text-white text-base">CPR and First Aid Certified</h4>
+          <p class="text-emerald-400 text-sm mt-0.5">Workplace &amp; Aged Care</p>
+        </div>
+      </div>
+      <i class="fa-solid fa-chevron-down cert-chevron text-emerald-400 text-sm flex-shrink-0"></i>
     </button>
-    <div id="cert-6" class="cert-content hidden">
-      <p class="text-slate-300 text-sm mt-2">Certified in Cardiopulmonary Resuscitation (CPR) and First Aid. Enables effective response to medical emergencies in workplace and aged care settings.</p>
-      <span class="cert-no-link"><i class="fa-solid fa-lock mr-1"></i>Certificate on file</span>
-      <!-- <a href="assets/cert-firstaid.pdf" target="_blank" class="cert-view-link"><i class="fa-solid fa-file-pdf"></i>View Certificate</a> -->
+    <div id="cert-6" class="cert-content hidden px-6 pb-6">
+      <p class="text-slate-300 text-sm leading-relaxed">Certified in Cardiopulmonary Resuscitation (CPR) and First Aid, enabling effective response to medical emergencies in workplace and aged care environments.</p>
+      <div class="mt-4">
+        <span class="cert-no-link"><i class="fa-solid fa-file mr-2"></i>Certificate on file — upload to assets/ to display</span>
+        <!-- <a href="assets/cert-firstaid.pdf" target="_blank" class="cert-view-btn"><i class="fa-solid fa-file-pdf"></i>View Certificate</a> -->
+      </div>
     </div>
   </div>
-
 </div>
     </section>
 
