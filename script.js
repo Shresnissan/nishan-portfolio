@@ -36,6 +36,14 @@ if (themeBtn) {
   });
 }
 
+document.querySelectorAll('.exp-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = document.getElementById(btn.dataset.target);
+    target.classList.toggle('hidden');
+    target.classList.toggle('show');
+  });
+});
+
 const modal = document.getElementById('projectModal');
 const modalBackdrop = document.getElementById('modalBackdrop');
 const modalClose = document.getElementById('modalClose');
