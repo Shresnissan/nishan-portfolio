@@ -351,4 +351,78 @@ body {
     animation: none !important;
     transition: none !important;
   }
+  /* ── ADD THESE TO THE BOTTOM OF styles.css ── */
+
+.cert-btn {
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cert-btn:hover {
+  background: rgba(52, 211, 153, 0.05);
+}
+
+.cert-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  display: grid;
+  place-items: center;
+  color: #34d399;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.cert-chevron {
+  transition: transform 0.35s ease;
+}
+
+.cert-chevron.open {
+  transform: rotate(180deg);
+}
+
+.cert-content {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.cert-content.show {
+  animation: expandDown 0.35s ease;
+}
+
+@keyframes expandDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cert-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 0.65rem;
+  background: #10b981;
+  color: #020617;
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cert-view-btn:hover {
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+.cert-no-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 0.65rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #64748b;
+  font-size: 0.85rem;
+}
 }
