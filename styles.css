@@ -252,6 +252,34 @@ body {
   border: 1px solid rgba(255,255,255,.08);
 }
 
+.exp-content {
+  transition: all 0.35s ease;
+}
+
+.exp-content.show {
+  animation: expandDown 0.35s ease;
+}
+
+@keyframes expandDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.exp-btn {
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.exp-btn:hover {
+  background: rgba(255,255,255,0.03);
+  transform: translateY(-2px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal, .fade-up, .floaty {
