@@ -19,13 +19,34 @@
   <a href="#main-content" class="skip-link">Skip to content</a>
   <div class="scroll-progress" id="scrollProgress"></div>
 
+  <div id="projectModal" class="modal hidden">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-panel glass">
+      <button id="modalClose" class="modal-close" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img id="modalImg" src="" alt="" class="modal-img">
+      <h3 id="modalTitle" class="text-3xl font-bold mt-6"></h3>
+      <p id="modalText" class="text-slate-300 mt-4"></p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a id="modalLink" href="#" target="_blank" class="btn-primary">Open PDF</a>
+        <button id="modalThemeHint" class="btn-secondary" type="button">Project Preview</button>
+      </div>
+    </div>
+  </div>
+
   <nav class="sticky top-0 z-50 border-b border-white/5 bg-slate-950/75 backdrop-blur-xl">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="#home" class="font-bold tracking-[0.25em] text-emerald-400 text-sm md:text-base">NISHAN.SHRESTHA</a>
 
-      <button id="menuBtn" class="md:hidden text-slate-200 text-2xl" aria-label="Open menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+      <div class="flex items-center gap-3">
+        <button id="themeBtn" class="icon-btn" aria-label="Toggle theme">
+          <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+        <button id="menuBtn" class="md:hidden icon-btn" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
 
       <div id="menu" class="hidden md:flex items-center gap-8 text-sm text-slate-300">
         <a href="#about" class="nav-link">About</a>
@@ -203,32 +224,32 @@
         <h2 class="section-title mb-14">Featured Projects</h2>
 
         <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-          <a class="glass rounded-3xl overflow-hidden card reveal" href="assets/project-aws.pdf" target="_blank">
+          <button class="glass rounded-3xl overflow-hidden card reveal project-btn text-left" data-title="Cloud Infrastructure Management Using AWS EC2" data-text="Designed and managed a secure, scalable EC2 web server with CloudWatch monitoring, security groups, resizing, and termination protection." data-img="assets/project-aws.jpg" data-link="assets/project-aws.pdf">
             <img src="assets/project-aws.jpg" alt="AWS cloud infrastructure project screenshot" loading="lazy" class="project-img">
             <div class="p-7">
               <h3 class="text-2xl font-bold">Cloud Infrastructure Management Using AWS EC2</h3>
               <p class="text-emerald-400 mt-2 text-sm">High Distinction • PDF + Preview</p>
               <p class="text-slate-300 mt-4">Designed and managed a secure, scalable EC2 web server with CloudWatch monitoring, security groups, resizing, and termination protection.</p>
             </div>
-          </a>
+          </button>
 
-          <a class="glass rounded-3xl overflow-hidden card reveal" href="assets/project-finance.pdf" target="_blank">
+          <button class="glass rounded-3xl overflow-hidden card reveal project-btn text-left" data-title="Financial Analysis of CSL Limited" data-text="Performed a financial review from 2019 to 2022, including trend analysis, profitability review, ROE, and EBITDA evaluation." data-img="assets/project-finance.jpg" data-link="assets/project-finance.pdf">
             <img src="assets/project-finance.jpg" alt="Financial analysis project screenshot" loading="lazy" class="project-img">
             <div class="p-7">
               <h3 class="text-2xl font-bold">Financial Analysis of CSL Limited</h3>
               <p class="text-emerald-400 mt-2 text-sm">Trend & Ratio Analysis • PDF + Preview</p>
               <p class="text-slate-300 mt-4">Performed a financial review from 2019 to 2022, including trend analysis, profitability review, ROE, and EBITDA evaluation.</p>
             </div>
-          </a>
+          </button>
 
-          <a class="glass rounded-3xl overflow-hidden card reveal" href="assets/project-web.pdf" target="_blank">
+          <button class="glass rounded-3xl overflow-hidden card reveal project-btn text-left" data-title="Boutique E-commerce Website" data-text="Built a visually appealing boutique website prototype with modern UX, user-friendly structure, and product-focused presentation." data-img="assets/project-web.jpg" data-link="assets/project-web.pdf">
             <img src="assets/project-web.jpg" alt="Boutique website project screenshot" loading="lazy" class="project-img">
             <div class="p-7">
               <h3 class="text-2xl font-bold">Boutique E-commerce Website</h3>
               <p class="text-emerald-400 mt-2 text-sm">WordPress Development • PDF + Preview</p>
               <p class="text-slate-300 mt-4">Built a visually appealing boutique website prototype with modern UX, user-friendly structure, and product-focused presentation.</p>
             </div>
-          </a>
+          </button>
         </div>
       </div>
     </section>
