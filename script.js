@@ -73,3 +73,19 @@ if (modalClose) modalClose.addEventListener('click', closeModal);
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeModal();
 });
+// Cert cards — reuse the same modal
+document.querySelectorAll('.cert-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const img = btn.dataset.img;
+    modalImg.src = img || '';
+    modalImg.style.display = img ? 'block' : 'none';
+    modalImg.alt = btn.dataset.title;
+    modalTitle.textContent = btn.dataset.title;
+    modalText.textContent = btn.dataset.text;
+    const link = btn.dataset.link;
+    modalLink.href = link || '#';
+    modalLink.textContent = link ? 'Open Link' : '';
+    modalLink.style.display = link ? 'inline-flex' : 'none';
+    modal.classList.remove('hidden');
+  });
+});
