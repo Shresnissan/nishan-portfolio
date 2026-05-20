@@ -280,4 +280,20 @@ body {
     animation: none !important;
     transition: none !important;
   }
+  .cert-panel {
+  transition: all 0.35s ease;
+}
+
+.cert-panel.show {
+  animation: expandDown 0.35s ease;
+}
+
+.cert-btn {
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cert-btn:hover {
+  background: rgba(255,255,255,0.03);
+  transform: translateY(-2px);
+}
 }
