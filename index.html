@@ -30,7 +30,7 @@
       <p id="modalText" class="text-slate-300 mt-4"></p>
       <div class="mt-6 flex flex-wrap gap-3">
         <a id="modalLink" href="#" target="_blank" class="btn-primary">Open PDF</a>
-        <button id="modalThemeHint" class="btn-secondary" type="button">Project Preview</button>
+        <button class="btn-secondary" type="button">Project Preview</button>
       </div>
     </div>
   </div>
@@ -155,65 +155,111 @@
         <p class="section-label">Experience</p>
         <h2 class="section-title mb-14">Work Experience</h2>
 
-        <div class="relative pl-8 space-y-10">
-          <div class="timeline-line"></div>
-
-          <article class="relative reveal">
-            <div class="timeline-dot"></div>
-            <div class="glass rounded-3xl p-8 card">
-              <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                <div>
-                  <h3 class="text-2xl font-bold">ICT Business Analyst Intern</h3>
-                  <p class="text-emerald-400 mt-1">Hubify Limited (ASX: HFY)</p>
-                </div>
-                <p class="text-slate-400">June – September 2025</p>
+        <div class="space-y-6">
+          <div class="glass rounded-3xl overflow-hidden reveal">
+            <button class="exp-btn w-full text-left p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4" data-target="exp-hubify">
+              <div>
+                <h3 class="text-2xl font-bold">ICT Business Analyst Intern</h3>
+                <p class="text-emerald-400 mt-1">Hubify Limited (ASX: HFY)</p>
               </div>
-              <ul class="mt-6 grid md:grid-cols-2 gap-4 text-slate-300 list-disc pl-5">
-                <li>Gathered and documented business requirements with users and stakeholders.</li>
-                <li>Led ticket analysis to identify recurring issues and automation opportunities.</li>
-                <li>Developed test plans, functional specifications, and user training materials.</li>
-                <li>Designed and deployed automation workflows to improve service desk efficiency.</li>
+              <p class="text-slate-400">June – September 2025</p>
+            </button>
+            <div id="exp-hubify" class="exp-content px-8 pb-8 hidden">
+              <ul class="list-disc pl-5 space-y-3 text-slate-300">
+                <li>Collaborated with end users and stakeholders to gather and document detailed business requirements, supporting development of effective IT solutions.</li>
+                <li>Led a ticket analysis project, identifying recurring issues and automation opportunities to reduce manual workload and improve response times.</li>
+                <li>Analyzed current business processes and workflows, identifying inefficiencies and recommending process improvements to enhance operational performance.</li>
+                <li>Assisted in project management activities, including planning, resource allocation, and timeline tracking using structured methodologies.</li>
+                <li>Developed and executed comprehensive system test plans to ensure functional requirements and software quality before deployment.</li>
+                <li>Developed clear functional specifications and data/process models to guide system developers and ensure alignment with business needs.</li>
+                <li>Produced user manuals and training materials and facilitated training sessions with the teams to promote successful technology adoption across departments.</li>
+                <li>Served as main contact between technical teams and users, enhancing communication and decision-making during the software development lifecycle.</li>
+                <li>Designed and deployed automation workflows, improving ticket resolution efficiency and contributing to service desk performance improvements.</li>
               </ul>
             </div>
-          </article>
+          </div>
 
-          <article class="relative reveal">
-            <div class="timeline-dot"></div>
-            <div class="glass rounded-3xl p-8 card">
-              <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                <div>
-                  <h3 class="text-2xl font-bold">Customer Service Consultant & Wellbeing Carer</h3>
-                  <p class="text-emerald-400 mt-1">Bupa Aged Care, Sutherland NSW</p>
-                </div>
-                <p class="text-slate-400">May 2024 – Present</p>
+          <div class="glass rounded-3xl overflow-hidden reveal">
+            <button class="exp-btn w-full text-left p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4" data-target="exp-bupa">
+              <div>
+                <h3 class="text-2xl font-bold">Customer Service Consultant &amp; Wellbeing Carer</h3>
+                <p class="text-emerald-400 mt-1">Bupa Aged Care, Sutherland NSW</p>
               </div>
-              <ul class="mt-6 grid md:grid-cols-2 gap-4 text-slate-300 list-disc pl-5">
-                <li>Managed admissions, recruitment, onboarding, and resident inquiries.</li>
-                <li>Used Epicor, Resident Select, Dimensions, and Lee Care for operations and records.</li>
-                <li>Delivered compassionate resident support and personalized wellbeing activities.</li>
-                <li>Maintained documentation, compliance, and professional communication.</li>
+              <p class="text-slate-400">May 2024 – Present</p>
+            </button>
+            <div id="exp-bupa" class="exp-content px-8 pb-8 hidden">
+              <div class="mb-6">
+                <h4 class="text-lg font-semibold text-white mb-3">Customer Service Consultant</h4>
+                <ul class="list-disc pl-5 space-y-3 text-slate-300">
+                  <li>Manage inquiries and coordinate admissions for prospective residents and families.</li>
+                  <li>Oversee recruitment, schedule interviews, and facilitate onboarding to support employee experience.</li>
+                  <li>Lead administrative operations, ensuring high standards of customer service and clear communication.</li>
+                  <li>Maintain accurate rosters, manage annual and sick leave, and monitor staffing using Dimensions.</li>
+                  <li>Utilize Epicor and Resident Select software for operational and data management tasks.</li>
+                  <li>Perform data entry, record maintenance, and archiving of care home and employee documents; ensure compliance with company and government standards.</li>
+                  <li>Prepare and distribute tour/admission packs for families and induction packs for new hires, outlining onboarding and training schedules.</li>
+                  <li>Schedule tours for prospective residents and interviews for candidates.</li>
+                  <li>Draft and send communications regarding updates and meeting confirmations.</li>
+                  <li>Collaborate with management to improve processes, operational efficiency, and resident satisfaction.</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-white mb-3">Wellbeing Carer (Recreational Activities Officer)</h4>
+                <ul class="list-disc pl-5 space-y-3 text-slate-300">
+                  <li>Deliver a consistently high standard of personalized care, demonstrating a comprehensive understanding of aged care principles and best practices.</li>
+                  <li>Provide compassionate physical and emotional support to residents, ensuring their wellbeing, dignity, and independence are always prioritized.</li>
+                  <li>Proactively suggest, plan, and evaluate activities with the lifestyle team, tailoring programs to residents’ mobility levels, preferences, and capabilities.</li>
+                  <li>Foster social connections and emotional wellbeing by initiating and supporting meaningful activities and monitoring residents’ participation and engagement.</li>
+                  <li>Maintain accurate and timely documentation of resident activities and health status using Lee Care software, ensuring compliance with all regulatory requirements.</li>
+                  <li>Monitor and report any changes in residents’ health, leisure, and lifestyle needs to appropriate healthcare professionals.</li>
+                  <li>Collaborate with the Wellbeing coordinator to create engaging activities and newsletters for residents.</li>
+                  <li>Participate in trainings to enhance care quality and maintain compliance with aged care regulations.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass rounded-3xl overflow-hidden reveal">
+            <button class="exp-btn w-full text-left p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4" data-target="exp-maloney">
+              <div>
+                <h3 class="text-2xl font-bold">Administrator &amp; Team Supervisor</h3>
+                <p class="text-emerald-400 mt-1">Maloney's Grocer, Rozelle NSW</p>
+              </div>
+              <p class="text-slate-400">Dec 2021 – Sep 2024</p>
+            </button>
+            <div id="exp-maloney" class="exp-content px-8 pb-8 hidden">
+              <ul class="list-disc pl-5 space-y-3 text-slate-300">
+                <li>Manage and maintain the company's IT infrastructure and provide technical support.</li>
+                <li>Coordinate with vendors for IT equipment procurement and maintenance.</li>
+                <li>Schedule and coordinate meetings for the Head Buyer and other executives.</li>
+                <li>Create and manage employee rosters, handling schedule changes efficiently.</li>
+                <li>Generate and analyse weekly sales reports for all stores.</li>
+                <li>Perform settlements and ring-offs, ensuring accurate financial reconciliation.</li>
+                <li>Supervise staff, providing guidance and managing workload distribution.</li>
+                <li>Review and approve invoices before forwarding to accounts department for vendor payments.</li>
+                <li>Assist in various administrative tasks to support smooth business operations.</li>
               </ul>
             </div>
-          </article>
+          </div>
 
-          <article class="relative reveal">
-            <div class="timeline-dot"></div>
-            <div class="glass rounded-3xl p-8 card">
-              <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                <div>
-                  <h3 class="text-2xl font-bold">Administrator & Team Supervisor</h3>
-                  <p class="text-emerald-400 mt-1">Maloney's Grocer, Rozelle NSW</p>
-                </div>
-                <p class="text-slate-400">Dec 2021 – Sep 2024</p>
+          <div class="glass rounded-3xl overflow-hidden reveal">
+            <button class="exp-btn w-full text-left p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4" data-target="exp-ict">
+              <div>
+                <h3 class="text-2xl font-bold">ICT Technician Intern</h3>
+                <p class="text-emerald-400 mt-1">Reliable IT Solutions, Sutherland NSW</p>
               </div>
-              <ul class="mt-6 grid md:grid-cols-2 gap-4 text-slate-300 list-disc pl-5">
-                <li>Supported IT infrastructure and technical troubleshooting.</li>
-                <li>Managed rosters, schedules, meetings, reports, invoices, and settlements.</li>
-                <li>Supervised staff and balanced administrative responsibilities.</li>
-                <li>Worked closely with vendors and executives to support operations.</li>
+              <p class="text-slate-400">March – July 2023</p>
+            </button>
+            <div id="exp-ict" class="exp-content px-8 pb-8 hidden">
+              <ul class="list-disc pl-5 space-y-3 text-slate-300">
+                <li>Assisted in troubleshooting and resolving various IT issues for clients.</li>
+                <li>Participated in the setup and maintenance of computer networks and systems.</li>
+                <li>Contributed to IT project implementations under supervision.</li>
+                <li>Gained firsthand experience with various hardware and software technologies.</li>
+                <li>Assisted in creating technical documentation and user guides.</li>
               </ul>
             </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
@@ -238,106 +284,4 @@
             <div class="p-7">
               <h3 class="text-2xl font-bold">Financial Analysis of CSL Limited</h3>
               <p class="text-emerald-400 mt-2 text-sm">Trend & Ratio Analysis • PDF + Preview</p>
-              <p class="text-slate-300 mt-4">Performed a financial review from 2019 to 2022, including trend analysis, profitability review, ROE, and EBITDA evaluation.</p>
-            </div>
-          </button>
-
-          <button class="glass rounded-3xl overflow-hidden card reveal project-btn text-left" data-title="Boutique E-commerce Website" data-text="Built a visually appealing boutique website prototype with modern UX, user-friendly structure, and product-focused presentation." data-img="assets/project-web.jpg" data-link="assets/project-web.pdf">
-            <img src="assets/project-web.jpg" alt="Boutique website project screenshot" loading="lazy" class="project-img">
-            <div class="p-7">
-              <h3 class="text-2xl font-bold">Boutique E-commerce Website</h3>
-              <p class="text-emerald-400 mt-2 text-sm">WordPress Development • PDF + Preview</p>
-              <p class="text-slate-300 mt-4">Built a visually appealing boutique website prototype with modern UX, user-friendly structure, and product-focused presentation.</p>
-            </div>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="section-pad bg-white/2">
-      <div class="max-w-7xl mx-auto px-6">
-        <p class="section-label">Skills</p>
-        <h2 class="section-title mb-14">Skills & Technologies</h2>
-
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="glass rounded-3xl p-8 card reveal">
-            <h3 class="text-xl font-semibold mb-4">Technical</h3>
-            <div class="skill-wrap">
-              <span class="tag">Python</span>
-              <span class="tag">SQL</span>
-              <span class="tag">Java</span>
-              <span class="tag">Linux</span>
-              <span class="tag">Advanced Excel</span>
-              <span class="tag">AWS EC2</span>
-            </div>
-          </div>
-
-          <div class="glass rounded-3xl p-8 card reveal">
-            <h3 class="text-xl font-semibold mb-4">Business</h3>
-            <div class="skill-wrap">
-              <span class="tag">Business Analysis</span>
-              <span class="tag">Requirements Gathering</span>
-              <span class="tag">Documentation</span>
-              <span class="tag">Project Management</span>
-              <span class="tag">Customer Support</span>
-            </div>
-          </div>
-
-          <div class="glass rounded-3xl p-8 card reveal">
-            <h3 class="text-xl font-semibold mb-4">Platforms</h3>
-            <div class="skill-wrap">
-              <span class="tag">Epicor</span>
-              <span class="tag">Resident Select</span>
-              <span class="tag">Dimensions</span>
-              <span class="tag">Lee Care</span>
-              <span class="tag">WordPress</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-pad">
-      <div class="max-w-5xl mx-auto px-6 text-center">
-        <p class="section-label">Certifications</p>
-        <h2 class="section-title">Professional Certifications</h2>
-        <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
-          <div class="cert-card reveal">CHC33021 - Certificate III in Individual Support</div>
-          <div class="cert-card reveal">Program of Experience in the Palliative Approach (PEPA)</div>
-          <div class="cert-card reveal">Google IT Support Certificate</div>
-          <div class="cert-card reveal">Google Data Analytics Certificate</div>
-          <div class="cert-card reveal">IBM Cybersecurity Analyst Certificate</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section-pad border-t border-white/5">
-      <div class="max-w-5xl mx-auto px-6 text-center">
-        <p class="section-label">Contact</p>
-        <h2 class="section-title">Ready to build something great together?</h2>
-        <p class="mt-6 text-lg text-slate-300 max-w-2xl mx-auto">
-          Open to Business Analyst, IT Support, and Cloud opportunities in Sydney.
-        </p>
-
-        <div class="mt-10 flex flex-wrap justify-center gap-4">
-          <a href="mailto:shresnissan@outlook.com" class="btn-primary">
-            <i class="fa-solid fa-envelope mr-2"></i>Email Me
-          </a>
-          <a href="https://www.linkedin.com/in/nishanshresthanewa/" target="_blank" class="btn-secondary">
-            <i class="fa-brands fa-linkedin mr-2"></i>LinkedIn
-          </a>
-          <a href="assets/resume.pdf" target="_blank" class="btn-secondary">
-            <i class="fa-solid fa-file-pdf mr-2"></i>Resume
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-white/5 py-8 text-center text-sm text-slate-500">
-    © 2026 Nishan Shrestha • Built with Tailwind CSS
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+              <p class="text-slate-300 mt-4">Performed a financial review 
