@@ -1,0 +1,10 @@
+portfolio/
+├── index.html
+├── styles.css
+├── script.js
+├── assets/
+│   ├── profile.jpg
+│   ├── project-aws.jpg
+│   ├── project-finance.jpg
+│   ├── project-web.jpg
+│   └── resume.pdf
