@@ -113,15 +113,7 @@ body {
   object-fit: cover;
 }
 
-/* ── Certification cards ───────────────────────────────────────── */
-.cert-card {
-  border-radius: 1rem;
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.08);
-  color: #e2e8f0;
-  overflow: hidden;
-}
-
+/* Certification cards */
 .cert-btn {
   width: 100%;
   text-align: left;
@@ -131,13 +123,13 @@ body {
   justify-content: space-between;
   gap: 0.75rem;
   padding: 1rem 1.25rem;
-  transition: border-color 0.25s ease, background 0.25s ease;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
 }
 
 .cert-btn:hover {
   background: rgba(52, 211, 153, 0.06);
   border-color: rgba(52, 211, 153, 0.3);
-  color: #34d399;
+  transform: translateY(-1px);
 }
 
 .cert-chevron {
@@ -155,7 +147,7 @@ body {
   animation: expandDown 0.3s ease;
 }
 
-.cert-view-link {
+.cert-view-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -169,7 +161,7 @@ body {
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.cert-view-link:hover {
+.cert-view-btn:hover {
   background: #059669;
   transform: translateY(-1px);
 }
@@ -187,7 +179,17 @@ body {
   border: 1px solid rgba(255,255,255,0.08);
 }
 
-/* ── Reveal animations ─────────────────────────────────────────── */
+.cert-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: grid;
+  place-items: center;
+  border-radius: 9999px;
+  background: rgba(16,185,129,0.12);
+  color: #34d399;
+}
+
+/* Reveal animations */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -208,24 +210,9 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.timeline-line {
-  position: absolute;
-  left: 11px;
-  top: 10px;
-  bottom: 10px;
-  width: 2px;
-  background: linear-gradient(to bottom, rgba(16,185,129,.8), rgba(16,185,129,.15));
-}
-
-.timeline-dot {
-  position: absolute;
-  left: -33px;
-  top: .5rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 9999px;
-  background: #34d399;
-  box-shadow: 0 0 0 8px rgba(52,211,153,.10);
+@keyframes expandDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .skip-link {
@@ -325,11 +312,6 @@ body {
 
 .exp-content.show {
   animation: expandDown 0.35s ease;
-}
-
-@keyframes expandDown {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 .exp-btn {
