@@ -1,88 +1,92 @@
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('show');
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('show');
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+  }
+
+  const progress = document.getElementById('scrollProgress');
+  window.addEventListener('scroll', () => {
+    if (!progress) return;
+    const s = window.scrollY;
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = `${h > 0 ? (s / h) * 100 : 0}%`;
   });
-}, { threshold: 0.12 });
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  const themeBtn = document.getElementById('themeBtn');
+  const root = document.documentElement;
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') root.classList.add('light');
 
-const menuBtn = document.getElementById('menuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      root.classList.toggle('light');
+      localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+    });
+  }
 
-if (menuBtn && mobileMenu) {
-  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+  document.querySelectorAll('.exp-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.target);
+      if (!target) return;
+      target.classList.toggle('hidden');
+      target.classList.toggle('show');
+      btn.setAttribute('aria-expanded', target.classList.contains('hidden') ? 'false' : 'true');
+    });
   });
-}
 
-const progress = document.getElementById('scrollProgress');
-window.addEventListener('scroll', () => {
-  if (!progress) return;
-  const s = window.scrollY;
-  const h = document.documentElement.scrollHeight - window.innerHeight;
-  progress.style.width = `${(s / h) * 100}%`;
-});
+  const modal = document.getElementById('projectModal');
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  const modalClose = document.getElementById('modalClose');
+  const modalImg = document.getElementById('modalImg');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalText = document.getElementById('modalText');
+  const modalLink = document.getElementById('modalLink');
 
-const themeBtn = document.getElementById('themeBtn');
-const root = document.documentElement;
-
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light') root.classList.add('light');
-
-if (themeBtn) {
-  themeBtn.addEventListener('click', () => {
-    root.classList.toggle('light');
-    localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+  document.querySelectorAll('.project-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (!modal || !modalImg || !modalTitle || !modalText || !modalLink) return;
+      modalImg.src = btn.dataset.img;
+      modalImg.alt = btn.dataset.title || '';
+      modalTitle.textContent = btn.dataset.title || '';
+      modalText.textContent = btn.dataset.text || '';
+      modalLink.href = btn.dataset.link || '#';
+      modal.classList.remove('hidden');
+    });
   });
-}
 
-document.querySelectorAll('.exp-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const target = document.getElementById(btn.dataset.target);
-    if (!target) return;
-    target.classList.toggle('hidden');
-    target.classList.toggle('show');
+  function closeModal() {
+    if (modal) modal.classList.add('hidden');
+  }
+
+  if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
   });
-});
 
-const modal = document.getElementById('projectModal');
-const modalBackdrop = document.getElementById('modalBackdrop');
-const modalClose = document.getElementById('modalClose');
-const modalImg = document.getElementById('modalImg');
-const modalTitle = document.getElementById('modalTitle');
-const modalText = document.getElementById('modalText');
-const modalLink = document.getElementById('modalLink');
+  document.querySelectorAll('.cert-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.target);
+      const icon = btn.querySelector('.cert-chevron');
+      if (!target) return;
 
-document.querySelectorAll('.project-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    if (!modal || !modalImg || !modalTitle || !modalText || !modalLink) return;
-    modalImg.src = btn.dataset.img;
-    modalImg.alt = btn.dataset.title;
-    modalTitle.textContent = btn.dataset.title;
-    modalText.textContent = btn.dataset.text;
-    modalLink.href = btn.dataset.link;
-    modal.classList.remove('hidden');
-  });
-});
-
-function closeModal() {
-  if (modal) modal.classList.add('hidden');
-}
-
-if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
-if (modalClose) modalClose.addEventListener('click', closeModal);
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeModal();
-});
-
-document.querySelectorAll('.cert-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const target = document.getElementById(btn.dataset.target);
-    const icon = btn.querySelector('.cert-chevron');
-    if (!target) return;
-    target.classList.toggle('hidden');
-    target.classList.toggle('show');
-    if (icon) icon.classList.toggle('rotate-180');
+      target.classList.toggle('hidden');
+      target.classList.toggle('show');
+      if (icon) icon.classList.toggle('rotate-180');
+      btn.setAttribute('aria-expanded', target.classList.contains('hidden') ? 'false' : 'true');
+    });
   });
 });
