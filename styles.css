@@ -113,7 +113,8 @@ body {
   object-fit: cover;
 }
 
-/* Certification cards */
+/* Accordion buttons */
+.exp-btn,
 .cert-btn {
   width: 100%;
   text-align: left;
@@ -122,14 +123,23 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  padding: 1rem 1.25rem;
-  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+  transition: background 0.3s ease, transform 0.3s ease, border-color 0.25s ease;
 }
 
+.exp-btn:hover,
 .cert-btn:hover {
-  background: rgba(52, 211, 153, 0.06);
-  border-color: rgba(52, 211, 153, 0.3);
-  transform: translateY(-1px);
+  background: rgba(255,255,255,0.03);
+  transform: translateY(-2px);
+}
+
+.exp-content,
+.cert-content {
+  transition: all 0.35s ease;
+}
+
+.exp-content.show,
+.cert-content.show {
+  animation: expandDown 0.35s ease;
 }
 
 .cert-chevron {
@@ -138,13 +148,18 @@ body {
   transition: transform 0.3s ease;
 }
 
-.cert-content {
-  padding: 0 1.25rem 1rem 1.25rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
+.rotate-180 {
+  transform: rotate(180deg);
 }
 
-.cert-content.show {
-  animation: expandDown 0.3s ease;
+.cert-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: grid;
+  place-items: center;
+  border-radius: 9999px;
+  background: rgba(16,185,129,0.12);
+  color: #34d399;
 }
 
 .cert-view-btn {
@@ -177,16 +192,6 @@ body {
   color: #94a3b8;
   font-size: 0.85rem;
   border: 1px solid rgba(255,255,255,0.08);
-}
-
-.cert-icon {
-  width: 2.25rem;
-  height: 2.25rem;
-  display: grid;
-  place-items: center;
-  border-radius: 9999px;
-  background: rgba(16,185,129,0.12);
-  color: #34d399;
 }
 
 /* Reveal animations */
@@ -304,27 +309,6 @@ body {
   place-items: center;
   background: rgba(255,255,255,.05);
   border: 1px solid rgba(255,255,255,.08);
-}
-
-.exp-content {
-  transition: all 0.35s ease;
-}
-
-.exp-content.show {
-  animation: expandDown 0.35s ease;
-}
-
-.exp-btn {
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.exp-btn:hover {
-  background: rgba(255,255,255,0.03);
-  transform: translateY(-2px);
-}
-
-.rotate-180 {
-  transform: rotate(180deg);
 }
 
 @media (prefers-reduced-motion: reduce) {
