@@ -37,7 +37,6 @@ if (themeBtn) {
   });
 }
 
-// Experience accordion toggle
 document.querySelectorAll('.exp-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const target = document.getElementById(btn.dataset.target);
@@ -47,7 +46,6 @@ document.querySelectorAll('.exp-btn').forEach(btn => {
   });
 });
 
-// Project modal
 const modal = document.getElementById('projectModal');
 const modalBackdrop = document.getElementById('modalBackdrop');
 const modalClose = document.getElementById('modalClose');
@@ -78,7 +76,6 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeModal();
 });
 
-// Certification accordion toggle
 document.querySelectorAll('.cert-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const target = document.getElementById(btn.dataset.target);
