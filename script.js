@@ -76,17 +76,4 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
   });
-
-  document.querySelectorAll('.cert-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const target = document.getElementById(btn.dataset.target);
-      const icon = btn.querySelector('.cert-chevron');
-      if (!target) return;
-
-      target.classList.toggle('hidden');
-      target.classList.toggle('show');
-      if (icon) icon.classList.toggle('rotate-180');
-      btn.setAttribute('aria-expanded', target.classList.contains('hidden') ? 'false' : 'true');
-    });
-  });
 });
