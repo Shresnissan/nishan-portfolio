@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body class="bg-slate-950 text-slate-100">
   <a href="#main-content" class="skip-link">Skip to content</a>
   <div class="scroll-progress" id="scrollProgress"></div>
@@ -22,9 +21,7 @@
   <div id="projectModal" class="modal hidden">
     <div class="modal-backdrop" id="modalBackdrop"></div>
     <div class="modal-panel glass">
-      <button id="modalClose" class="modal-close" aria-label="Close modal">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
+      <button id="modalClose" class="modal-close" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
       <img id="modalImg" src="" alt="" class="modal-img">
       <h3 id="modalTitle" class="text-3xl font-bold mt-6"></h3>
       <p id="modalText" class="text-slate-300 mt-4"></p>
@@ -68,8 +65,6 @@
   </nav>
 
   <main id="main-content">
-
-    <!-- HOME -->
     <section id="home" class="hero-bg min-h-screen flex items-center">
       <div class="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-center">
         <div class="fade-up">
@@ -137,7 +132,6 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about" class="section-pad border-t border-white/5">
       <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-10 items-start">
         <div class="lg:col-span-4">
@@ -154,7 +148,6 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
     <section id="experience" class="section-pad bg-white/2">
       <div class="max-w-7xl mx-auto px-6">
         <p class="section-label">Experience</p>
@@ -169,7 +162,7 @@
               </div>
               <p class="text-slate-400">June – September 2025</p>
             </button>
-            <div id="exp-hubify" class="exp-content px-8 pb-8 hidden">
+            <div id="exp-hubify" class="exp-content hidden px-8 pb-8">
               <ul class="list-disc pl-5 space-y-3 text-slate-300">
                 <li>Collaborated with end users and stakeholders to gather and document detailed business requirements, supporting development of effective IT solutions.</li>
                 <li>Led a ticket analysis project, identifying recurring issues and automation opportunities to reduce manual workload and improve response times.</li>
@@ -192,7 +185,7 @@
               </div>
               <p class="text-slate-400">May 2024 – Present</p>
             </button>
-            <div id="exp-bupa" class="exp-content px-8 pb-8 hidden">
+            <div id="exp-bupa" class="exp-content hidden px-8 pb-8">
               <div class="mb-6">
                 <h4 class="text-lg font-semibold text-white mb-3">Customer Service Consultant</h4>
                 <ul class="list-disc pl-5 space-y-3 text-slate-300">
@@ -232,7 +225,7 @@
               </div>
               <p class="text-slate-400">Dec 2021 – Sep 2024</p>
             </button>
-            <div id="exp-maloney" class="exp-content px-8 pb-8 hidden">
+            <div id="exp-maloney" class="exp-content hidden px-8 pb-8">
               <ul class="list-disc pl-5 space-y-3 text-slate-300">
                 <li>Manage and maintain the company's IT infrastructure and provide technical support.</li>
                 <li>Coordinate with vendors for IT equipment procurement and maintenance.</li>
@@ -255,7 +248,7 @@
               </div>
               <p class="text-slate-400">March – July 2023</p>
             </button>
-            <div id="exp-ict" class="exp-content px-8 pb-8 hidden">
+            <div id="exp-ict" class="exp-content hidden px-8 pb-8">
               <ul class="list-disc pl-5 space-y-3 text-slate-300">
                 <li>Assisted in troubleshooting and resolving various IT issues for clients.</li>
                 <li>Participated in the setup and maintenance of computer networks and systems.</li>
@@ -269,7 +262,6 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
     <section id="projects" class="section-pad">
       <div class="max-w-7xl mx-auto px-6">
         <p class="section-label">Projects</p>
@@ -315,12 +307,10 @@
       </div>
     </section>
 
-    <!-- SKILLS -->
     <section id="skills" class="section-pad bg-white/2">
       <div class="max-w-7xl mx-auto px-6">
         <p class="section-label">Skills</p>
         <h2 class="section-title mb-14">Skills & Technologies</h2>
-
         <div class="grid md:grid-cols-3 gap-8">
           <div class="glass rounded-3xl p-8 card reveal">
             <h3 class="text-xl font-semibold mb-4">Technical</h3>
@@ -335,7 +325,6 @@
               <span class="tag">Graphics Designing</span>
             </div>
           </div>
-
           <div class="glass rounded-3xl p-8 card reveal">
             <h3 class="text-xl font-semibold mb-4">Business</h3>
             <div class="skill-wrap">
@@ -346,7 +335,6 @@
               <span class="tag">Customer Support</span>
             </div>
           </div>
-
           <div class="glass rounded-3xl p-8 card reveal">
             <h3 class="text-xl font-semibold mb-4">Systems & Platforms</h3>
             <div class="skill-wrap">
@@ -367,31 +355,26 @@
       </div>
     </section>
 
-    <!-- EDUCATION -->
     <section id="education" class="section-pad">
       <div class="max-w-7xl mx-auto px-6">
         <p class="section-label">Education</p>
         <h2 class="section-title mb-14">Education & Certifications</h2>
-
         <div class="grid lg:grid-cols-2 gap-8">
           <div class="glass rounded-3xl p-8 card reveal">
             <h3 class="text-2xl font-bold mb-2">Professional Year</h3>
             <p class="text-emerald-400">Performance Education | 9th October 2024 – 12th November 2025</p>
             <p class="text-slate-300 mt-4">Level 6/11-31 York St, Sydney NSW 2000</p>
           </div>
-
           <div class="glass rounded-3xl p-8 card reveal">
             <h3 class="text-2xl font-bold mb-2">Bachelor of Business Information Systems</h3>
             <p class="text-emerald-400">Asia Pacific International College</p>
             <p class="text-slate-300 mt-4">Parramatta, NSW 2150</p>
           </div>
-
           <div class="glass rounded-3xl p-8 card reveal">
             <h3 class="text-2xl font-bold mb-2">Tourism and Hospitality</h3>
             <p class="text-emerald-400">Nasa Int'l Secondary School</p>
             <p class="text-slate-300 mt-4">Kathmandu, Nepal</p>
           </div>
-
           <div class="glass rounded-3xl p-8 card reveal">
             <h3 class="text-2xl font-bold mb-2">Web Designing & Hosting / Graphics Designing</h3>
             <p class="text-emerald-400">Aptech Computer Education Pt. Ltd., Nepal</p>
@@ -399,9 +382,7 @@
           </div>
         </div>
 
-        <!-- CERTIFICATIONS -->
         <div class="space-y-4 mt-10">
-
           <div class="glass rounded-3xl overflow-hidden reveal">
             <button class="cert-btn w-full text-left p-6 flex items-center justify-between gap-4" data-target="cert-1">
               <div class="flex items-center gap-4">
@@ -415,11 +396,6 @@
             </button>
             <div id="cert-1" class="cert-content hidden px-6 pb-6">
               <p class="text-slate-300 text-sm leading-relaxed">Covers person-centred support skills for individuals who need assistance due to ageing or disability, including communication, safety, and personal care practices.</p>
-              <div class="mt-4">
-                <span class="cert-no-link"><i class="fa-solid fa-file mr-2"></i>Certificate on file</span>
-                <!-- Once you have the PDF, delete the line above and uncomment below: -->
-                <a href="assets/cert-chc33021.pdf" target="_blank" class="cert-view-btn"><i class="fa-solid fa-file-pdf"></i>View Certificate</a>
-              </div>
             </div>
           </div>
 
@@ -436,10 +412,6 @@
             </button>
             <div id="cert-2" class="cert-content hidden px-6 pb-6">
               <p class="text-slate-300 text-sm leading-relaxed">National program providing health and aged care workers with the skills and confidence to deliver quality palliative care. Includes structured placement and training.</p>
-              <div class="mt-4">
-                 <span class="cert-no-link"><i class="fa-solid fa-file mr-2"></i>Certificate on file</span>
-                <a href="assets/cert-pepa.pdf" target="_blank" class="cert-view-btn"><i class="fa-solid fa-file-pdf"></i>View Certificate</a>
-              </div>
             </div>
           </div>
 
@@ -456,10 +428,6 @@
             </button>
             <div id="cert-3" class="cert-content hidden px-6 pb-6">
               <p class="text-slate-300 text-sm leading-relaxed">Covers troubleshooting, networking, operating systems, system administration, and security fundamentals across 5 courses.</p>
-              <div class="mt-4 flex flex-wrap gap-3">
-                <a href="https://www.coursera.org/professional-certificates/google-it-support" target="_blank" class="cert-view-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i>View on Coursera</a>
-                <a href="assets/cert-google-it.pdf" target="_blank" class="cert-view-btn"><i class="fa-solid fa-file-pdf"></i>View Certificate</a>
-              </div>
             </div>
           </div>
 
@@ -476,10 +444,6 @@
             </button>
             <div id="cert-4" class="cert-content hidden px-6 pb-6">
               <p class="text-slate-300 text-sm leading-relaxed">Covers the full data analysis workflow including spreadsheets, SQL, R programming, and Tableau visualisation across 8 courses.</p>
-              <div class="mt-4 flex flex-wrap gap-3">
-                <a href="https://www.coursera.org/professional-certificates/google-data-analytics" target="_blank" class="cert-view-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i>View on Coursera</a>
-                <a href="assets/cert-google-data.pdf" target="_blank" class="cert-view-btn"><i class="fa-solid fa-file-pdf"></i>View Certificate</a>
-              </div>
             </div>
           </div>
 
@@ -496,10 +460,6 @@
             </button>
             <div id="cert-5" class="cert-content hidden px-6 pb-6">
               <p class="text-slate-300 text-sm leading-relaxed">Covers network security, endpoint protection, incident response, threat intelligence, and penetration testing fundamentals across 8 courses.</p>
-              <div class="mt-4 flex flex-wrap gap-3">
-                <a href="https://www.coursera.org/professional-certificates/ibm-cybersecurity-analyst" target="_blank" class="cert-view-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i>View on Coursera</a>
-                <a href="assets/cert-ibm-cyber.pdf" target="_blank" class="cert-view-btn"><i class="fa-solid fa-file-pdf"></i>View Certificate</a>
-              </div>
             </div>
           </div>
 
@@ -516,46 +476,27 @@
             </button>
             <div id="cert-6" class="cert-content hidden px-6 pb-6">
               <p class="text-slate-300 text-sm leading-relaxed">Certified in Cardiopulmonary Resuscitation (CPR) and First Aid, enabling effective response to medical emergencies in workplace and aged care environments.</p>
-              <div class="mt-4">
-                <span class="cert-no-link"><i class="fa-solid fa-file mr-2"></i>Certificate on file</span>
-                <a href="assets/cert-firstaid.pdf" target="_blank" class="cert-view-btn"><i class="fa-solid fa-file-pdf"></i>View Certificate</a>
-              </div>
             </div>
           </div>
-
-        </div><!-- end certifications -->
-      </div><!-- end max-w-7xl -->
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section-pad border-t border-white/5">
-      <div class="max-w-5xl mx-auto px-6 text-center">
-        <p class="section-label">Contact</p>
-        <h2 class="section-title">Ready to build something great together?</h2>
-        <p class="mt-6 text-lg text-slate-300 max-w-2xl mx-auto">
-          Open to Business Analyst, IT Support, Cloud and Customer Service opportunities.
-        </p>
-
-        <div class="mt-10 flex flex-wrap justify-center gap-4">
-          <a href="mailto:shresnissan@outlook.com" class="btn-primary">
-            <i class="fa-solid fa-envelope mr-2"></i>Email Me
-          </a>
-          <a href="https://www.linkedin.com/in/nishanshresthanewa/" target="_blank" class="btn-secondary">
-            <i class="fa-brands fa-linkedin mr-2"></i>LinkedIn
-          </a>
-          <a href="assets/resume.pdf" target="_blank" class="btn-secondary">
-            <i class="fa-solid fa-file-pdf mr-2"></i>Resume
-          </a>
         </div>
       </div>
     </section>
 
+    <section id="contact" class="section-pad border-t border-white/5">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">Ready to build something great together?</h2>
+        <p class="mt-6 text-lg text-slate-300 max-w-2xl mx-auto">Open to Business Analyst, IT Support, Cloud and Customer Service opportunities.</p>
+        <div class="mt-10 flex flex-wrap justify-center gap-4">
+          <a href="mailto:shresnissan@outlook.com" class="btn-primary"><i class="fa-solid fa-envelope mr-2"></i>Email Me</a>
+          <a href="https://www.linkedin.com/in/nishanshresthanewa/" target="_blank" class="btn-secondary"><i class="fa-brands fa-linkedin mr-2"></i>LinkedIn</a>
+          <a href="assets/resume.pdf" target="_blank" class="btn-secondary"><i class="fa-solid fa-file-pdf mr-2"></i>Resume</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="border-t border-white/5 py-8 text-center text-sm text-slate-500">
-    © 2026 Nishan Shrestha
-  </footer>
-
+  <footer class="border-t border-white/5 py-8 text-center text-sm text-slate-500">© 2026 Nishan Shrestha</footer>
   <script src="script.js"></script>
 </body>
 </html>
