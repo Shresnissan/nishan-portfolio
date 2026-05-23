@@ -18,6 +18,7 @@ if (menuBtn && mobileMenu) {
 
 const progress = document.getElementById('scrollProgress');
 window.addEventListener('scroll', () => {
+  if (!progress) return;
   const s = window.scrollY;
   const h = document.documentElement.scrollHeight - window.innerHeight;
   progress.style.width = `${(s / h) * 100}%`;
@@ -40,48 +41,49 @@ if (themeBtn) {
 document.querySelectorAll('.exp-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const target = document.getElementById(btn.dataset.target);
+    if (!target) return;
     target.classList.toggle('hidden');
     target.classList.toggle('show');
   });
 });
 
-// ── Project modal ────────────────────────────────────────────────────────────
-const modal        = document.getElementById('projectModal');
+// Project modal
+const modal = document.getElementById('projectModal');
 const modalBackdrop = document.getElementById('modalBackdrop');
-const modalClose   = document.getElementById('modalClose');
-const modalImg     = document.getElementById('modalImg');
-const modalTitle   = document.getElementById('modalTitle');
-const modalText    = document.getElementById('modalText');
-const modalLink    = document.getElementById('modalLink');
+const modalClose = document.getElementById('modalClose');
+const modalImg = document.getElementById('modalImg');
+const modalTitle = document.getElementById('modalTitle');
+const modalText = document.getElementById('modalText');
+const modalLink = document.getElementById('modalLink');
 
 document.querySelectorAll('.project-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    modalImg.src       = btn.dataset.img;
-    modalImg.alt       = btn.dataset.title;
-    modalImg.style.display = 'block';
+    if (!modal || !modalImg || !modalTitle || !modalText || !modalLink) return;
+    modalImg.src = btn.dataset.img;
+    modalImg.alt = btn.dataset.title;
     modalTitle.textContent = btn.dataset.title;
-    modalText.textContent  = btn.dataset.text;
-    modalLink.href         = btn.dataset.link;
-    modalLink.textContent  = 'Open PDF';
-    modalLink.style.display = 'inline-flex';
+    modalText.textContent = btn.dataset.text;
+    modalLink.href = btn.dataset.link;
     modal.classList.remove('hidden');
   });
 });
 
 function closeModal() {
-  modal.classList.add('hidden');
+  if (modal) modal.classList.add('hidden');
 }
 
 if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
-if (modalClose)    modalClose.addEventListener('click', closeModal);
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+if (modalClose) modalClose.addEventListener('click', closeModal);
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});
 
-// ── Certification accordion toggle ───────────────────────────────────────────
+// Certification accordion toggle
 document.querySelectorAll('.cert-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const target = document.getElementById(btn.dataset.target);
-    const icon   = btn.querySelector('.cert-chevron');
-
+    const icon = btn.querySelector('.cert-chevron');
+    if (!target) return;
     target.classList.toggle('hidden');
     target.classList.toggle('show');
     if (icon) icon.classList.toggle('rotate-180');
