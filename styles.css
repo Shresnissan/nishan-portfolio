@@ -317,4 +317,46 @@ body {
     animation: none !important;
     transition: none !important;
   }
+details > summary {
+  list-style: none;
 }
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] .cert-chevron {
+  transform: rotate(180deg);
+}
+
+details[open] .cert-content {
+  animation: expandDown 0.35s ease;
+}
+
+.cert-btn {
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+}
+
+.cert-content {
+  padding: 0 1.25rem 1rem 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all .8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes expandDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+}
+
