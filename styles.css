@@ -113,33 +113,27 @@ body {
   object-fit: cover;
 }
 
-/* Accordion buttons */
-.exp-btn,
+/* ── Certification cards ───────────────────────────────────────── */
+.cert-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.6rem;
+  background: rgba(16,185,129,0.12);
+  border: 1px solid rgba(16,185,129,0.25);
+  display: grid;
+  place-items: center;
+  color: #34d399;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
 .cert-btn {
-  width: 100%;
-  text-align: left;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  transition: background 0.3s ease, transform 0.3s ease, border-color 0.25s ease;
+  transition: background 0.25s ease;
 }
 
-.exp-btn:hover,
 .cert-btn:hover {
-  background: rgba(255,255,255,0.03);
-  transform: translateY(-2px);
-}
-
-.exp-content,
-.cert-content {
-  transition: all 0.35s ease;
-}
-
-.exp-content.show,
-.cert-content.show {
-  animation: expandDown 0.35s ease;
+  background: rgba(52, 211, 153, 0.06);
 }
 
 .cert-chevron {
@@ -148,25 +142,18 @@ body {
   transition: transform 0.3s ease;
 }
 
-.rotate-180 {
-  transform: rotate(180deg);
+.cert-content {
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
 
-.cert-icon {
-  width: 2.25rem;
-  height: 2.25rem;
-  display: grid;
-  place-items: center;
-  border-radius: 9999px;
-  background: rgba(16,185,129,0.12);
-  color: #34d399;
+.cert-content.show {
+  animation: expandDown 0.3s ease;
 }
 
 .cert-view-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  margin-top: 0.75rem;
   padding: 0.5rem 1rem;
   border-radius: 0.6rem;
   background: #10b981;
@@ -174,6 +161,7 @@ body {
   font-weight: 700;
   font-size: 0.85rem;
   transition: background 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
 }
 
 .cert-view-btn:hover {
@@ -185,7 +173,6 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  margin-top: 0.75rem;
   padding: 0.5rem 1rem;
   border-radius: 0.6rem;
   background: rgba(255,255,255,0.06);
@@ -194,7 +181,7 @@ body {
   border: 1px solid rgba(255,255,255,0.08);
 }
 
-/* Reveal animations */
+/* ── Reveal animations ─────────────────────────────────────────── */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -212,11 +199,6 @@ body {
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes expandDown {
-  from { opacity: 0; transform: translateY(-8px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -292,6 +274,13 @@ body {
   border-radius: 9999px;
   background: rgba(255,255,255,.08);
   color: white;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.modal-close:hover {
+  background: rgba(255,255,255,.15);
 }
 
 .modal-img {
@@ -309,6 +298,48 @@ body {
   place-items: center;
   background: rgba(255,255,255,.05);
   border: 1px solid rgba(255,255,255,.08);
+  cursor: pointer;
+  color: #e2e8f0;
+}
+
+.icon-btn:hover {
+  border-color: #34d399;
+  color: #34d399;
+}
+
+.exp-content {
+  transition: all 0.35s ease;
+}
+
+.exp-content.show {
+  animation: expandDown 0.35s ease;
+}
+
+@keyframes expandDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.exp-btn {
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.exp-btn:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -317,46 +348,4 @@ body {
     animation: none !important;
     transition: none !important;
   }
-details > summary {
-  list-style: none;
 }
-
-details > summary::-webkit-details-marker {
-  display: none;
-}
-
-details[open] .cert-chevron {
-  transform: rotate(180deg);
-}
-
-details[open] .cert-content {
-  animation: expandDown 0.35s ease;
-}
-
-.cert-btn {
-  padding: 1rem 1.25rem;
-  cursor: pointer;
-}
-
-.cert-content {
-  padding: 0 1.25rem 1rem 1.25rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: all .8s ease;
-}
-
-.reveal.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes expandDown {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-}
-
