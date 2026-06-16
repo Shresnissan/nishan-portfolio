@@ -13,38 +13,6 @@ body {
   cursor: none; /* custom cursor */
 }
 
-/* ── CUSTOM CURSOR ─────────────────────────────────────────────────── */
-#cursor-dot {
-  width: 8px; height: 8px;
-  background: #10b981;
-  border-radius: 50%;
-  position: fixed;
-  top: 0; left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.08s ease, background 0.2s;
-  mix-blend-mode: difference;
-}
-
-#cursor-ring {
-  width: 36px; height: 36px;
-  border: 1.5px solid rgba(52,211,153,0.6);
-  border-radius: 50%;
-  position: fixed;
-  top: 0; left: 0;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition: transform 0.18s cubic-bezier(0.16,1,0.3,1),
-              width 0.25s ease, height 0.25s ease,
-              border-color 0.25s ease, opacity 0.25s;
-}
-
-#cursor-ring.hovered {
-  width: 56px; height: 56px;
-  border-color: rgba(52,211,153,0.9);
-}
 
 /* ── PARTICLE CANVAS ───────────────────────────────────────────────── */
 #particle-canvas {
