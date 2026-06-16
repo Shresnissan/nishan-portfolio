@@ -1,28 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════
    NISHAN SHRESTHA — PORTFOLIO  |  script.js
-   ═══════════════════════════════════════════════════════════════════ */
-
-/* ── 1. CUSTOM CURSOR ─────────────────────────────────────────────── */
-(function initCursor() {
-  const dot  = document.createElement('div'); dot.id  = 'cursor-dot';
-  const ring = document.createElement('div'); ring.id = 'cursor-ring';
-  document.body.append(dot, ring);
-
-  let mx = -100, my = -100, rx = -100, ry = -100;
-  window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-
-  (function lerpRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    dot.style.left  = mx + 'px'; dot.style.top  = my + 'px';
-    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-    requestAnimationFrame(lerpRing);
-  })();
-
-  const hoverSel = 'a,button,.card,.tag,.cert-btn,.exp-btn,.icon-btn,.btn-primary,.btn-secondary,.cert-view-btn';
-  document.addEventListener('mouseover', e => { if (e.target.closest(hoverSel)) ring.classList.add('hovered'); });
-  document.addEventListener('mouseout',  e => { if (e.target.closest(hoverSel)) ring.classList.remove('hovered'); });
-})();
 
 
 /* ── 2. PARTICLE CANVAS — fixed, behind everything, scrolls with page ── */
@@ -129,7 +106,7 @@
 (function initTyping() {
   const eyebrow = document.querySelector('#home .text-emerald-400');
   if (!eyebrow) return;
-  const roles = ['ICT Business Analyst','Cloud Professional','IT Problem Solver','Process Automator','Tech-Business Bridge'];
+  const roles = ['ICT Business Analyst','Cloud Professional'];
   if (!document.getElementById('blink-kf')) {
     const s = document.createElement('style'); s.id = 'blink-kf';
     s.textContent = '@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}';
