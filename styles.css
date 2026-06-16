@@ -32,6 +32,62 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
   z-index: 1;
 }
 
+.hero-bg {
+  background:
+    radial-gradient(ellipse 55% 60% at 10% 0%, rgba(16,185,129,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 45% 55% at 90% 95%, rgba(59,130,246,0.10) 0%, transparent 55%),
+    linear-gradient(155deg, #020617 0%, #0b1120 50%, #0f172a 100%);
+}
+
+.glass {
+  background: rgba(13, 20, 38, 0.70);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.nav-link {
+  position: relative;
+  transition: color .25s ease;
+  padding-bottom: 3px;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #34d399;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, #10b981, #34d399, #6ee7b7);
+  z-index: 200;
+  box-shadow: 0 0 12px rgba(16,185,129,0.7);
+  transition: width 0.08s linear;
+}
+
 .skip-link {
   position: absolute;
   left: -999px;
@@ -46,19 +102,225 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
   left: 1rem;
 }
 
+.section-pad {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.section-label {
+  color: #34d399;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 1.5px;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  border-radius: 2px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.hero-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(40px) skewY(4deg);
+  animation: charReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes charReveal {
+  to { opacity: 1; transform: translateY(0) skewY(0); }
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .78rem 1.6rem;
+  border-radius: .75rem;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+  cursor: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #020617;
+  box-shadow: 0 0 24px rgba(16,185,129,0.30);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255,255,255,.10);
+  background: transparent;
+  color: #e2e8f0;
+}
+
+.tag {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  font-size: 0.82rem;
+}
+
+.metric-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.metric-number {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #10b981, #6ee7b7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.metric-text {
+  color: #cbd5e1;
+  font-size: .875rem;
+  margin-top: .3rem;
+}
+
+.card {
+  transition: box-shadow 0.2s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: relative;
+}
+
+.project-img {
+  width: 100%;
+  height: 14rem;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-btn:hover .project-img {
+  transform: scale(1.08);
+}
+
+.exp-btn,
+.cert-btn,
+.icon-btn {
+  cursor: none;
+}
+
+.exp-content,
+.cert-content {
+  transition: all 0.35s ease;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-up {
+  animation: fadeUp 0.9s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.floaty {
+  animation: floaty 7s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
 .modal.hidden {
   display: none;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(2,6,23,0.88);
+  backdrop-filter: blur(8px);
+}
+
+.modal-panel {
+  position: relative;
+  z-index: 1;
+  width: min(900px, 100%);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.modal-img {
+  width: 100%;
+  height: 22rem;
+  object-fit: cover;
+  border-radius: 1rem;
 }
 
 .rotate-180 {
   transform: rotate(180deg);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+html.light body {
+  background: #f0fdf9;
+  color: #0f172a;
+}
 
+html.light .glass {
+  background: rgba(255,255,255,0.72);
+  border-color: rgba(0,0,0,0.08);
+}
+
+html.light .text-slate-300 { color: #475569; }
+html.light .text-slate-400 { color: #64748b; }
+html.light .text-slate-500 { color: #94a3b8; }
+html.light nav { background: rgba(240,253,244,0.88) !important; }
+html.light #particle-canvas { opacity: 0.25; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   *,
   *::before,
   *::after {
@@ -66,13 +328,9 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-
   body {
     cursor: auto;
   }
-
-  #cursor-dot,
-  #cursor-ring,
   #particle-canvas {
     display: none;
   }
