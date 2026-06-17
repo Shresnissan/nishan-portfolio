@@ -84,83 +84,49 @@
 })();
 
 
-/* ── 2. HERO SPLIT-TEXT ───────────────────────────────────────────── */
+/* ── 2. HERO SPLIT-TEXT — animates each WORD, keeps name intact ───── */
 (function initSplitText() {
   const h1 = document.querySelector('#home h1');
   if (!h1) return;
 
-  // inject keyframe once
   if (!document.getElementById('char-kf')) {
     const s = document.createElement('style');
     s.id = 'char-kf';
     s.textContent = `
-      .hero-char {
+      .hero-word {
         display: inline-block;
         opacity: 0;
-        transform: translateY(38px) skewY(4deg);
-        animation: charReveal 0.58s cubic-bezier(0.16,1,0.3,1) forwards;
+        transform: translateY(32px);
+        animation: wordReveal 0.65s cubic-bezier(0.16,1,0.3,1) forwards;
       }
-      @keyframes charReveal {
-        to { opacity:1; transform: translateY(0) skewY(0); }
+      @keyframes wordReveal {
+        to { opacity:1; transform: translateY(0); }
       }
     `;
     document.head.appendChild(s);
   }
 
-  const text = h1.textContent;
+  // Split by word, preserve spaces between them
+  const words = h1.textContent.trim().split(/\s+/);
   h1.textContent = '';
-  text.split('').forEach((char, i) => {
+  words.forEach((word, i) => {
     const span = document.createElement('span');
-    span.className     = 'hero-char';
-    span.textContent   = char === ' ' ? '\u00A0' : char;
-    span.style.animationDelay = `${0.3 + i * 0.03}s`;
+    span.className = 'hero-word';
+    span.textContent = word;
+    span.style.animationDelay = `${0.2 + i * 0.15}s`;
     h1.appendChild(span);
+    // add a real space text node between words
+    if (i < words.length - 1) h1.appendChild(document.createTextNode(' '));
   });
 })();
 
 
-/* ── 3. TYPING EFFECT ─────────────────────────────────────────────── */
-(function initTyping() {
+/* ── 3. EYEBROW — static text matching your actual role/certs ──────── */
+(function initEyebrow() {
   const eyebrow = document.querySelector('#home .text-emerald-400');
   if (!eyebrow) return;
-
-  const roles = [
-    'ICT Business Analyst',
-    'Cloud Professional',
-    'IT Problem Solver',
-    'Process Automator',
-    'Tech-Business Bridge'
-  ];
-
-  if (!document.getElementById('blink-kf')) {
-    const s = document.createElement('style');
-    s.id = 'blink-kf';
-    s.textContent = `@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`;
-    document.head.appendChild(s);
-  }
-
-  const cursor = document.createElement('span');
-  cursor.style.cssText =
-    'display:inline-block;width:2px;height:0.85em;background:#34d399;' +
-    'margin-left:3px;vertical-align:middle;border-radius:1px;' +
-    'animation:blink 0.9s step-end infinite;';
-
-  const suffix   = ' • Cloud • IT Professional';
-  const textNode = document.createTextNode('');
-  eyebrow.textContent = '';
-  eyebrow.append(textNode, cursor);
-
-  let wi = 0, ci = 0, deleting = false;
-  function tick() {
-    const word = roles[wi];
-    ci = deleting ? ci - 1 : ci + 1;
-    textNode.nodeValue = word.slice(0, ci) + suffix;
-    let delay = deleting ? 42 : 76;
-    if (!deleting && ci === word.length)  { delay = 2000; deleting = true; }
-    if (deleting  && ci === 0)            { deleting = false; wi = (wi + 1) % roles.length; delay = 380; }
-    setTimeout(tick, delay);
-  }
-  setTimeout(tick, 900);
+  // Set it to exactly what reflects your portfolio: BA + IT focus
+  eyebrow.textContent = 'ICT Business Analyst  •  IT Support  •  Cloud Infrastructure';
 })();
 
 
