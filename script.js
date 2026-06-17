@@ -84,7 +84,7 @@
 })();
 
 
-/* ── 2. HERO SPLIT-TEXT — animates each WORD, keeps name intact ───── */
+/* ── 2. HERO SPLIT-TEXT — animates each WORD, keeps name on one line ── */
 (function initSplitText() {
   const h1 = document.querySelector('#home h1');
   if (!h1) return;
@@ -125,8 +125,8 @@
 (function initEyebrow() {
   const eyebrow = document.querySelector('#home .text-emerald-400');
   if (!eyebrow) return;
-  // Set it to exactly what reflects your portfolio: BA + IT focus
-  eyebrow.textContent = 'ICT Business Analyst  •  IT Support  •  Cloud Infrastructure';
+  // Reflects actual portfolio & certs — BA core, IT-leaning
+  eyebrow.textContent = 'ICT Business Analyst  •  Cloud & IT Infrastructure  •  Google & IBM Certified';
 })();
 
 
