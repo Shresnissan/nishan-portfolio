@@ -424,8 +424,8 @@ html.light body {
 
 /* ── Particle canvas — subtler in light mode ── */
 html.light #particle-canvas {
-  opacity: 0.18;
-  filter: hue-rotate(10deg) saturate(0.8);
+  opacity: 0.55;
+  filter: saturate(1.4) brightness(0.75);
 }
 
 /* ── Nav ── */
