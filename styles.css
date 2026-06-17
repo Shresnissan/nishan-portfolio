@@ -1,15 +1,21 @@
 /* ═══════════════════════════════════════════════════════════════════
    NISHAN SHRESTHA — styles.css
+   Dark mode is default. Light mode via html.light class.
    ═══════════════════════════════════════════════════════════════════ */
 
 /* ── BASE ──────────────────────────────────────────────────────────── */
 html { scroll-behavior: smooth; }
 *, *::before, *::after { box-sizing: border-box; }
-body { font-family: 'Inter', system-ui, sans-serif; overflow-x: hidden; }
 
-/* ── PARTICLE CANVAS sits here via JS (fixed, z-index:0) ──────────── */
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+  background: #020617;
+  color: #e2e8f0;
+  transition: background 0.35s ease, color 0.35s ease;
+}
 
-/* Ensure all page content renders above the canvas */
+/* All page content above the particle canvas */
 nav, main, footer, .modal, .scroll-progress, .skip-link {
   position: relative;
   z-index: 1;
@@ -21,6 +27,7 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
     radial-gradient(ellipse 55% 60% at 10% 0%,  rgba(16,185,129,0.14) 0%, transparent 55%),
     radial-gradient(ellipse 45% 55% at 90% 95%, rgba(59,130,246,0.10) 0%, transparent 55%),
     linear-gradient(155deg, #020617 0%, #0b1120 50%, #0f172a 100%);
+  transition: background 0.35s ease;
 }
 
 /* ── GLASS ─────────────────────────────────────────────────────────── */
@@ -29,6 +36,7 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(255,255,255,0.07);
+  transition: background 0.35s ease, border-color 0.35s ease;
 }
 
 /* ── NAV ───────────────────────────────────────────────────────────── */
@@ -46,9 +54,9 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
   border-radius: 2px;
   transition: width 0.3s ease;
 }
-.nav-link:hover        { color: #34d399; }
-.nav-link:hover::after { width: 100%; }
-.nav-link.active        { color: #34d399; }
+.nav-link:hover         { color: #059669; }
+.nav-link:hover::after  { width: 100%; }
+.nav-link.active        { color: #059669; }
 .nav-link.active::after { width: 100%; }
 
 /* ── SCROLL PROGRESS ───────────────────────────────────────────────── */
@@ -74,7 +82,7 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
 .section-pad { padding-top: 6rem; padding-bottom: 6rem; }
 
 .section-label {
-  color: #34d399;
+  color: #059669;
   text-transform: uppercase;
   letter-spacing: 0.28em;
   font-size: 0.72rem;
@@ -112,8 +120,10 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
   overflow: hidden;
   transition: transform .2s ease, box-shadow .2s ease,
               background .2s ease, border-color .2s ease, color .2s ease;
+  cursor: pointer;
 }
 
+/* shimmer sweep */
 .btn-primary::after,
 .btn-secondary::after {
   content: '';
@@ -129,39 +139,41 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
 
 .btn-primary {
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  color: #020617;
+  color: #fff;
   box-shadow: 0 0 22px rgba(16,185,129,0.28);
 }
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 38px rgba(16,185,129,0.48), 0 8px 28px rgba(0,0,0,0.3);
+  box-shadow: 0 0 38px rgba(16,185,129,0.48), 0 8px 28px rgba(0,0,0,0.2);
 }
 
 .btn-secondary {
-  border: 1px solid rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.14);
+  color: #e2e8f0;
   background: transparent;
 }
 .btn-secondary:hover {
-  border-color: #34d399;
-  color: #34d399;
+  border-color: #10b981;
+  color: #10b981;
   transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(0,0,0,0.22);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.15);
 }
 
 /* ── TAGS / PILLS ──────────────────────────────────────────────────── */
 .tag {
   padding: 0.5rem 1rem;
   border-radius: 9999px;
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
   font-size: 0.82rem;
+  color: #cbd5e1;
   transition: background 0.22s, border-color 0.22s, color 0.22s, transform 0.22s;
   cursor: default;
 }
 .tag:hover {
-  background: rgba(16,185,129,0.10);
-  border-color: rgba(16,185,129,0.35);
-  color: #34d399;
+  background: rgba(16,185,129,0.12);
+  border-color: rgba(16,185,129,0.40);
+  color: #059669;
   transform: translateY(-2px);
 }
 
@@ -191,7 +203,7 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
 /* ── METRIC CARDS ──────────────────────────────────────────────────── */
 .metric-card {
   background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.08);
   border-radius: 1rem;
   padding: 1rem;
   transition: background 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
@@ -210,7 +222,7 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
   background-clip: text;
   line-height: 1;
 }
-.metric-text { color: #cbd5e1; font-size: .875rem; margin-top: .3rem; }
+.metric-text { color: #94a3b8; font-size: .875rem; margin-top: .3rem; }
 
 /* ── 3D CARD TILT ──────────────────────────────────────────────────── */
 .card {
@@ -220,8 +232,8 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
 }
 .glass.card:hover {
   box-shadow:
-    0 24px 60px rgba(0,0,0,0.42),
-    0 0 0 1px rgba(16,185,129,0.32),
+    0 24px 60px rgba(0,0,0,0.35),
+    0 0 0 1px rgba(16,185,129,0.30),
     0 0 36px rgba(16,185,129,0.05);
 }
 
@@ -230,7 +242,7 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
   width: 100%; height: 14rem; object-fit: cover;
   transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
 }
-.project-btn { overflow: hidden; }
+.project-btn { overflow: hidden; cursor: pointer; }
 .project-btn:hover .project-img { transform: scale(1.07); }
 
 /* ── EXPERIENCE ────────────────────────────────────────────────────── */
@@ -240,16 +252,9 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
 .exp-content.show { animation: expandDown 0.35s ease; }
 
 /* ── CERTIFICATIONS ────────────────────────────────────────────────── */
-
-/* Each cert row wrapper */
-.glass.rounded-3xl.overflow-hidden.reveal {
-  /* nothing extra needed — handled by .cert-btn / .cert-content below */
-}
-
 .cert-btn {
   cursor: pointer;
   transition: background 0.25s ease;
-  /* ensure it spans full width and lays out correctly */
   width: 100%;
   text-align: left;
   display: flex;
@@ -261,7 +266,7 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
   background: transparent;
   color: inherit;
 }
-.cert-btn:hover { background: rgba(52,211,153,0.05); }
+.cert-btn:hover { background: rgba(16,185,129,0.05); }
 
 .cert-icon {
   width: 2.5rem; height: 2.5rem;
@@ -269,7 +274,7 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
   background: rgba(16,185,129,0.10);
   border: 1px solid rgba(16,185,129,0.22);
   display: grid; place-items: center;
-  color: #34d399; font-size: 1rem;
+  color: #10b981; font-size: 1rem;
   flex-shrink: 0;
   transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
 }
@@ -279,39 +284,32 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
   box-shadow: 0 0 14px rgba(16,185,129,0.3);
 }
 
-/* Text block inside cert button */
-.cert-btn > div:nth-child(2) {
-  flex: 1;
-  min-width: 0;
-}
+.cert-btn > div:nth-child(2) { flex: 1; min-width: 0; }
 .cert-btn h4 {
   font-weight: 600;
-  color: #fff;
   font-size: 0.95rem;
   white-space: normal;
   line-height: 1.35;
+  /* colour set per-theme below */
 }
 .cert-btn p {
-  color: #34d399;
+  color: #10b981;
   font-size: 0.8rem;
   margin-top: 0.2rem;
 }
 
-/* Chevron */
 .cert-chevron {
   flex-shrink: 0;
-  color: #34d399;
+  color: #10b981;
   transition: transform 0.3s ease;
   font-size: 0.75rem;
 }
 .rotate-180 { transform: rotate(180deg); }
 
-/* Content panel */
 .cert-content {
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(255,255,255,0.07);
   padding: 1.25rem 1.5rem 1.5rem;
 }
-/* hidden state already applied by JS; show state: */
 .cert-content:not(.hidden) { display: block; }
 .cert-content.show { animation: expandDown 0.3s ease; }
 
@@ -319,7 +317,7 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
   display: inline-flex; align-items: center; gap: 0.4rem;
   padding: 0.5rem 1rem; border-radius: 0.6rem;
   background: linear-gradient(135deg, #10b981, #059669);
-  color: #020617; font-weight: 700; font-size: 0.85rem;
+  color: #fff; font-weight: 700; font-size: 0.85rem;
   text-decoration: none;
   transition: transform 0.2s, box-shadow 0.2s;
   margin-top: 0.75rem;
@@ -396,12 +394,12 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
 .icon-btn {
   width: 2.5rem; height: 2.5rem; border-radius: 9999px;
   display: grid; place-items: center;
-  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.10);
   cursor: pointer; color: #e2e8f0;
   transition: border-color 0.2s, color 0.2s, transform 0.2s, background 0.2s;
 }
 .icon-btn:hover {
-  border-color: #34d399; color: #34d399;
+  border-color: #10b981; color: #10b981;
   transform: scale(1.1); background: rgba(16,185,129,0.08);
 }
 
@@ -414,14 +412,195 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
   from { opacity: 0; } to { opacity: 1; }
 }
 
-/* ── LIGHT THEME ───────────────────────────────────────────────────── */
-html.light body       { background: #f0fdf9; color: #0f172a; }
-html.light .glass     { background: rgba(255,255,255,0.74); border-color: rgba(0,0,0,0.08); }
-html.light .text-slate-300 { color: #475569; }
-html.light .text-slate-400 { color: #64748b; }
-html.light .text-slate-500 { color: #94a3b8; }
-html.light nav        { background: rgba(240,253,244,0.88) !important; }
-html.light #particle-canvas { opacity: 0.2; }
+/* ════════════════════════════════════════════════════════════════════
+   LIGHT THEME — thorough overrides for every component
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ── Base & body ── */
+html.light body {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+/* ── Particle canvas — subtler in light mode ── */
+html.light #particle-canvas {
+  opacity: 0.18;
+  filter: hue-rotate(10deg) saturate(0.8);
+}
+
+/* ── Nav ── */
+html.light nav {
+  background: rgba(248,250,252,0.90) !important;
+  border-bottom-color: rgba(0,0,0,0.08) !important;
+}
+html.light .nav-link          { color: #334155; }
+html.light .nav-link:hover    { color: #059669; }
+html.light .nav-link.active   { color: #059669; }
+
+/* ── Hero section ── */
+html.light .hero-bg {
+  background:
+    radial-gradient(ellipse 55% 60% at 10% 0%,  rgba(16,185,129,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 45% 55% at 90% 95%, rgba(59,130,246,0.08) 0%, transparent 55%),
+    linear-gradient(155deg, #ecfdf5 0%, #f0fdf4 50%, #f8fafc 100%);
+}
+
+/* Text colours inside hero that Tailwind hardcodes */
+html.light #home h1             { color: #0f172a; }
+html.light #home .text-slate-300 { color: #475569; }
+html.light #home .text-slate-400 { color: #64748b; }
+html.light #home a.hover\:text-emerald-400 { color: #475569; }
+html.light #home a.hover\:text-emerald-400:hover { color: #059669; }
+
+/* ── Glass cards ── */
+html.light .glass {
+  background: rgba(255,255,255,0.88);
+  border-color: rgba(0,0,0,0.09);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+
+/* ── Section backgrounds ── */
+html.light .bg-white\/2 { background: rgba(241,245,249,0.7) !important; }
+html.light .border-white\/5 { border-color: rgba(0,0,0,0.07) !important; }
+
+/* ── Section labels & titles ── */
+html.light .section-label { color: #059669; }
+html.light .section-title  { color: #0f172a; }
+
+/* ── Tailwind text colour overrides ── */
+html.light .text-slate-100  { color: #0f172a; }
+html.light .text-slate-300  { color: #475569; }
+html.light .text-slate-400  { color: #64748b; }
+html.light .text-slate-500  { color: #94a3b8; }
+html.light .text-emerald-400 { color: #059669; }
+
+/* ── Buttons ── */
+html.light .btn-primary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #fff;
+  box-shadow: 0 0 18px rgba(16,185,129,0.22);
+}
+html.light .btn-secondary {
+  border-color: rgba(0,0,0,0.15);
+  color: #334155;
+  background: rgba(255,255,255,0.7);
+}
+html.light .btn-secondary:hover {
+  border-color: #059669;
+  color: #059669;
+  background: rgba(255,255,255,0.95);
+}
+
+/* ── Tags / Pills ── */
+html.light .tag {
+  background: rgba(16,185,129,0.07);
+  border-color: rgba(16,185,129,0.20);
+  color: #065f46;
+}
+html.light .tag:hover {
+  background: rgba(16,185,129,0.15);
+  border-color: rgba(16,185,129,0.40);
+  color: #047857;
+}
+
+/* ── Metric cards ── */
+html.light .metric-card {
+  background: rgba(255,255,255,0.80);
+  border-color: rgba(0,0,0,0.08);
+}
+html.light .metric-card:hover {
+  background: rgba(236,253,245,0.95);
+  border-color: rgba(16,185,129,0.30);
+  box-shadow: 0 8px 24px rgba(16,185,129,0.10);
+}
+html.light .metric-text { color: #475569; }
+
+/* ── Experience accordion ── */
+html.light .exp-btn         { color: #0f172a; }
+html.light .exp-btn:hover   { background: rgba(16,185,129,0.06); }
+html.light .exp-btn h3      { color: #0f172a; }
+html.light .exp-btn .text-emerald-400 { color: #059669; }
+html.light .exp-btn .text-slate-400   { color: #64748b; }
+html.light .exp-content ul li { color: #475569; }
+
+/* ── Certifications ── */
+html.light .cert-btn         { color: #0f172a; }
+html.light .cert-btn:hover   { background: rgba(16,185,129,0.05); }
+html.light .cert-btn h4      { color: #0f172a; }
+html.light .cert-btn p       { color: #059669; }
+html.light .cert-chevron     { color: #059669; }
+html.light .cert-content     {
+  border-top-color: rgba(0,0,0,0.07);
+}
+html.light .cert-content .text-slate-300 { color: #475569; }
+html.light .cert-no-link {
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.10);
+  color: #64748b;
+}
+
+/* ── Project cards ── */
+html.light .project-btn .text-emerald-400 { color: #059669; }
+html.light .project-btn .text-slate-300   { color: #475569; }
+html.light .project-btn h3                { color: #0f172a; }
+
+/* ── Education cards ── */
+html.light .glass h3              { color: #0f172a; }
+html.light .glass .text-emerald-400 { color: #059669; }
+html.light .glass .text-slate-300   { color: #475569; }
+
+/* ── Skills card headings ── */
+html.light .glass h3.text-xl { color: #0f172a; }
+
+/* ── Icon buttons ── */
+html.light .icon-btn {
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.12);
+  color: #334155;
+}
+html.light .icon-btn:hover {
+  border-color: #059669;
+  color: #059669;
+  background: rgba(16,185,129,0.07);
+}
+
+/* ── Card hover glow ── */
+html.light .glass.card:hover {
+  box-shadow:
+    0 16px 48px rgba(0,0,0,0.10),
+    0 0 0 1px rgba(16,185,129,0.25),
+    0 0 24px rgba(16,185,129,0.06);
+}
+
+/* ── Modal in light mode ── */
+html.light .modal-backdrop {
+  background: rgba(15,23,42,0.65);
+}
+html.light .modal-close {
+  background: rgba(0,0,0,0.08);
+  color: #0f172a;
+}
+html.light .modal-close:hover { background: rgba(0,0,0,0.15); }
+html.light #modalTitle  { color: #0f172a; }
+html.light #modalText   { color: #475569; }
+
+/* ── Footer ── */
+html.light footer {
+  border-top-color: rgba(0,0,0,0.08) !important;
+  color: #64748b;
+}
+
+/* ── Contact section ── */
+html.light #contact .text-slate-300 { color: #475569; }
+html.light #contact h2              { color: #0f172a; }
+
+/* ── About section ── */
+html.light #about .text-lg { color: #334155; }
+
+/* ── Scroll progress ── */
+html.light .scroll-progress {
+  box-shadow: 0 0 8px rgba(16,185,129,0.50);
+}
 
 /* ── REDUCED MOTION ────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
