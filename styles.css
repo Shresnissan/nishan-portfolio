@@ -15,10 +15,10 @@ body {
   transition: background 0.35s ease, color 0.35s ease;
 }
 
-/* All page content above the particle canvas */
+/* All page content above the particle canvas (canvas is z-index:2) */
 nav, main, footer, .modal, .scroll-progress, .skip-link {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 /* ── HERO BACKGROUND ───────────────────────────────────────────────── */
@@ -420,12 +420,6 @@ nav, main, footer, .modal, .scroll-progress, .skip-link {
 html.light body {
   background: #f8fafc;
   color: #0f172a;
-}
-
-/* ── Particle canvas — subtler in light mode ── */
-html.light #particle-canvas {
-  opacity: 0.55;
-  filter: saturate(1.4) brightness(0.75);
 }
 
 /* ── Nav ── */
