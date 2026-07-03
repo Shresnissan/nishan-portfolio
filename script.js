@@ -2,19 +2,17 @@
    NISHAN SHRESTHA — script.js
    ═══════════════════════════════════════════════════════════════════ */
 
-/* ── 1. PARTICLE CANVAS (fixed, behind everything) ────────────────── */
+/* ── 1. PARTICLE CANVAS ────────────────────────────────────────────── */
 (function initParticles() {
   const canvas = document.createElement('canvas');
   canvas.id = 'particle-canvas';
-  // Fixed position, full screen, behind all content
   canvas.style.cssText = `
     position: fixed;
     inset: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 2;
     pointer-events: none;
-    opacity: 0.5;
   `;
   document.body.prepend(canvas);
   const ctx = canvas.getContext('2d');
@@ -26,29 +24,47 @@
   resize();
   window.addEventListener('resize', resize, { passive: true });
 
-  const PARTICLE_COUNT = 72;
+  const isLight = () => document.documentElement.classList.contains('light');
+
+  const PARTICLE_COUNT = 120;
   const particles = [];
 
   class Particle {
     constructor() { this.reset(true); }
     reset(initial) {
-      this.x   = Math.random() * canvas.width;
-      this.y   = initial ? Math.random() * canvas.height : canvas.height + 10;
-      this.r   = Math.random() * 1.4 + 0.4;
-      this.sp  = Math.random() * 0.32 + 0.08;
-      this.op  = Math.random() * 0.45 + 0.12;
-      this.dx  = (Math.random() - 0.5) * 0.28;
-      this.hue = Math.random() > 0.72 ? 215 : 158;
+      this.x    = Math.random() * canvas.width;
+      this.y    = initial ? Math.random() * canvas.height : canvas.height + 10;
+      this.r    = Math.random() * 3.5 + 1.8;    // 1.8–5.3px — clearly visible
+      this.sp   = Math.random() * 0.55 + 0.18;  // steady upward drift
+      this.op   = Math.random() * 0.35 + 0.60;  // 0.60–0.95 — strong
+      this.dx   = (Math.random() - 0.5) * 0.45;
+      this.hue  = Math.random() > 0.68 ? 210 : 158; // teal or blue
+      this.glow = Math.random() > 0.45; // ~55% get a glow ring
     }
     update() {
       this.y -= this.sp;
       this.x += this.dx;
-      if (this.y < -6) this.reset(false);
+      if (this.y < -8) this.reset(false);
     }
     draw() {
+      const light = isLight();
+      // Dark mode: bright teal/blue. Light mode: deep saturated tones on white.
+      const l   = light ? 32 : 65;
+      const sat = light ? 92 : 82;
+      const op  = light ? this.op * 0.90 : this.op;
+
+      // Glow halo
+      if (this.glow) {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r * 3.2, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${this.hue}, ${sat}%, ${l}%, ${op * 0.22})`;
+        ctx.fill();
+      }
+
+      // Core dot
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = `hsla(${this.hue}, 80%, 62%, ${this.op})`;
+      ctx.fillStyle = `hsla(${this.hue}, ${sat}%, ${l}%, ${op})`;
       ctx.fill();
     }
   }
@@ -56,18 +72,22 @@
   for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
 
   function drawLines() {
-    const MAX_DIST = 115;
+    const MAX_DIST = 150;
+    const light = isLight();
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const ddx = particles[i].x - particles[j].x;
         const ddy = particles[i].y - particles[j].y;
         const d   = Math.sqrt(ddx * ddx + ddy * ddy);
         if (d < MAX_DIST) {
+          const alpha = (1 - d / MAX_DIST) * (light ? 0.55 : 0.40);
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(52,211,153,${(1 - d / MAX_DIST) * 0.16})`;
-          ctx.lineWidth   = 0.6;
+          ctx.strokeStyle = light
+            ? `rgba(5,120,85,${alpha})`
+            : `rgba(52,211,153,${alpha})`;
+          ctx.lineWidth = light ? 1.1 : 0.9;
           ctx.stroke();
         }
       }
